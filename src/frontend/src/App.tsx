@@ -67,6 +67,11 @@ const SANDSTONE_VARIETIES = [
     img: "/assets/generated/sandstone-rajgreen.dim_600x400.jpg",
   },
   {
+    name: "Kandla Grey",
+    subtitle: "Cool Grey Tones",
+    img: "/assets/uploads/img_20210220_181921-019d2438-dfc4-736a-afbc-0cdd53c71867-1.jpg",
+  },
+  {
     name: "Autumn Brown",
     subtitle: "Warm Rustic Browns",
     img: "/assets/generated/sandstone-autumn-brown.dim_600x400.jpg",
@@ -358,7 +363,7 @@ function Products() {
           </div>
 
           <div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
             data-ocid="sandstone.list"
           >
             {SANDSTONE_VARIETIES.map((variety, i) => (
