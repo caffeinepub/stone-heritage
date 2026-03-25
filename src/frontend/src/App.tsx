@@ -101,7 +101,7 @@ const NAV_ITEMS = [
 
 const TRUST_BADGES = [
   { icon: Shield, label: "Certified Suppliers" },
-  { icon: Clock, label: "Since 1985" },
+  { icon: Clock, label: "Since 2012" },
   { icon: CheckCircle, label: "Quality Stones" },
   { icon: MessageCircle, label: "24/7 Support" },
   { icon: Truck, label: "Fast Delivery" },
@@ -216,7 +216,7 @@ const WHY_CHOOSE = [
   {
     icon: Award,
     title: "Industry Pioneers",
-    desc: "Over 35 years of expertise as a leading manufacturer and exporter of Indian natural stones worldwide.",
+    desc: "Over 15+ years of expertise as a leading manufacturer and exporter of Indian natural stones worldwide.",
   },
   {
     icon: Clock,
@@ -1083,7 +1083,7 @@ function AboutSection() {
               }}
             >
               Stone Heritage is a family-owned manufacturer and exporter of
-              premium Indian natural stones, established in 1985. Located in
+              premium Indian natural stones, established in 2012. Located in
               Bijoliya, Rajasthan — the heartland of India's finest stone
               quarries — we have spent over three decades perfecting the art of
               stone extraction, processing, and international export.
@@ -1106,7 +1106,7 @@ function AboutSection() {
                 ["50+ Countries", "Exported To"],
                 ["1000+ Projects", "Completed"],
                 ["500+ Products", "In Range"],
-                ["35+ Years", "Experience"],
+                ["15+ Years", "Experience"],
               ].map(([n, l]) => (
                 <div
                   key={l}
