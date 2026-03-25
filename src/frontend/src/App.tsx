@@ -31,7 +31,7 @@ const STONES = [
   {
     name: "Sandstone",
     subtitle: "Warm & Durable",
-    img: "/assets/generated/sandstone.dim_600x400.jpg",
+    img: "/assets/uploads/img_0687-019d2435-194c-765d-abdb-60a12d8fc189-1.jpg",
   },
   {
     name: "Marble",
@@ -57,6 +57,34 @@ const STONES = [
     name: "Quartzite",
     subtitle: "Pure & Resilient",
     img: "/assets/generated/quartzite.dim_600x400.jpg",
+  },
+];
+
+const SANDSTONE_VARIETIES = [
+  {
+    name: "Rajgreen",
+    subtitle: "Earthy Green Tones",
+    img: "/assets/generated/sandstone-rajgreen.dim_600x400.jpg",
+  },
+  {
+    name: "Autumn Brown",
+    subtitle: "Warm Rustic Browns",
+    img: "/assets/generated/sandstone-autumn-brown.dim_600x400.jpg",
+  },
+  {
+    name: "Rippon Buff",
+    subtitle: "Classic Buff Cream",
+    img: "/assets/uploads/img_0687-019d2435-194c-765d-abdb-60a12d8fc189-1.jpg",
+  },
+  {
+    name: "Mint",
+    subtitle: "Soft Mint Greens",
+    img: "/assets/generated/sandstone-mint.dim_600x400.jpg",
+  },
+  {
+    name: "Modak",
+    subtitle: "Pinkish Beige Hues",
+    img: "/assets/generated/sandstone-modak.dim_600x400.jpg",
   },
 ];
 
@@ -299,6 +327,69 @@ function Products() {
             </motion.div>
           ))}
         </div>
+
+        {/* Sandstone Varieties Sub-section */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16"
+        >
+          <div className="flex items-center gap-4 mb-8">
+            <div className="flex-1 h-px bg-stone-taupe" />
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <div className="w-6 h-px bg-stone-gold" />
+                <Diamond
+                  className="w-3 h-3 text-stone-gold"
+                  fill="currentColor"
+                />
+                <div className="w-6 h-px bg-stone-gold" />
+              </div>
+              <h3 className="text-lg lg:text-xl font-bold tracking-[0.14em] uppercase text-stone-darker">
+                Sandstone Varieties
+              </h3>
+              <p className="mt-1 text-stone-muted text-xs tracking-wide">
+                Explore our range of premium Indian sandstone colours
+              </p>
+            </div>
+            <div className="flex-1 h-px bg-stone-taupe" />
+          </div>
+
+          <div
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
+            data-ocid="sandstone.list"
+          >
+            {SANDSTONE_VARIETIES.map((variety, i) => (
+              <motion.div
+                key={variety.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="group bg-card border border-stone-taupe rounded-sm overflow-hidden hover:shadow-stone transition-shadow duration-300"
+                data-ocid={`sandstone.item.${i + 1}`}
+              >
+                <div className="overflow-hidden h-40">
+                  <img
+                    src={variety.img}
+                    alt={variety.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-bold text-xs tracking-widest uppercase text-stone-darker">
+                    {variety.name}
+                  </h4>
+                  <p className="text-stone-muted text-[11px] tracking-wide mt-0.5">
+                    {variety.subtitle}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
