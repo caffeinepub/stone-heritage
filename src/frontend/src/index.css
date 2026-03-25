@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.25rem;
+
+    /* Stone Heritage palette — warm earth tones */
+    /* Page background: warm off-white cream */
+    --background: 0.965 0.012 75;
+    /* Primary text: near-black warm */
+    --foreground: 0.18 0.025 60;
+    /* Card: slightly warmer cream */
+    --card: 0.975 0.01 75;
+    --card-foreground: 0.18 0.025 60;
+    --popover: 0.975 0.01 75;
+    --popover-foreground: 0.18 0.025 60;
+
+    /* Primary: deep chocolate brown #2F2016 */
+    --primary: 0.24 0.04 55;
+    --primary-foreground: 0.97 0.008 75;
+
+    /* Secondary: pale tan #D9C3A8 */
+    --secondary: 0.84 0.04 75;
+    --secondary-foreground: 0.24 0.04 55;
+
+    /* Muted: warm beige panels #EFE7DC */
+    --muted: 0.93 0.018 75;
+    --muted-foreground: 0.52 0.03 60;
+
+    /* Accent: sandy gold #B08A4C */
+    --accent: 0.68 0.11 70;
+    --accent-foreground: 0.18 0.025 60;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Borders: light taupe #D7CFC3 */
+    --border: 0.855 0.025 75;
+    --input: 0.855 0.025 75;
+    --ring: 0.68 0.11 70;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Montserrat", sans-serif;
+  }
+}
