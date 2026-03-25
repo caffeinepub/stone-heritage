@@ -485,7 +485,7 @@ function MainNav() {
             }}
           >
             <img
-              src="/assets/generated/stone-heritage-logo-transparent.dim_800x800.png"
+              src="/assets/generated/sh-stone-heritage-logo-transparent.dim_400x400.png"
               alt="Stone Heritage Logo"
               style={{ height: 48, width: 48, objectFit: "contain" }}
             />
@@ -500,7 +500,7 @@ function MainNav() {
                   lineHeight: 1.1,
                 }}
               >
-                STONE HERITAGE
+                SH STONE HERITAGE
               </div>
               <div
                 style={{
@@ -2351,7 +2351,7 @@ function Footer() {
               }}
             >
               <img
-                src="/assets/generated/stone-heritage-logo-transparent.dim_800x800.png"
+                src="/assets/generated/sh-stone-heritage-logo-transparent.dim_400x400.png"
                 alt="Stone Heritage"
                 style={{
                   height: 40,
@@ -2370,7 +2370,7 @@ function Footer() {
                     letterSpacing: "0.06em",
                   }}
                 >
-                  STONE HERITAGE
+                  SH STONE HERITAGE
                 </div>
                 <div
                   style={{
@@ -2385,7 +2385,7 @@ function Footer() {
               </div>
             </div>
             <p style={{ fontSize: 12, color: "#9ca3af", lineHeight: 1.7 }}>
-              Premium Indian natural stone manufacturer and exporter since 1985.
+              Premium Indian natural stone manufacturer and exporter since 2012.
               Direct from quarry to your doorstep, worldwide.
             </p>
             <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
