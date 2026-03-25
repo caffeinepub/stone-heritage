@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import {
   ArrowRight,
+  ChevronLeft,
   ChevronRight,
   Diamond,
   Facebook,
@@ -10,12 +11,14 @@ import {
   Mail,
   MapPin,
   Menu,
+  MessageCircle,
   Phone,
   Twitter,
   X,
+  ZoomIn,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useActor } from "./hooks/useActor";
 
@@ -31,31 +34,43 @@ const STONES = [
   {
     name: "Sandstone",
     subtitle: "Warm & Durable",
+    description:
+      "Quarried from the mineral-rich plains of Rajasthan, our sandstone offers warm earthy tones and exceptional durability. Ideal for flooring, cladding, paving, and landscaping worldwide.",
     img: "/assets/uploads/img_0687-019d2435-194c-765d-abdb-60a12d8fc189-1.jpg",
   },
   {
     name: "Marble",
     subtitle: "Elegant & Timeless",
+    description:
+      "Sourced from the renowned quarries of Kishangarh, our marble delivers timeless elegance with lustrous veining. Perfect for interiors, countertops, and luxury architectural installations.",
     img: "/assets/generated/marble.dim_600x400.jpg",
   },
   {
     name: "Granite",
     subtitle: "Strong & Lustrous",
+    description:
+      "Our premium Indian granite combines extraordinary hardness with natural beauty. Available in multiple finishes, it is engineered for countertops, monuments, and high-traffic commercial surfaces.",
     img: "/assets/generated/granite.dim_600x400.jpg",
   },
   {
     name: "Limestone",
     subtitle: "Classic & Versatile",
+    description:
+      "A classic building material prized for its subtle texture and soft neutral palette. Stone Heritage limestone is widely used in facades, flooring, and heritage restoration projects.",
     img: "/assets/generated/limestone.dim_600x400.jpg",
   },
   {
     name: "Slate",
     subtitle: "Natural & Refined",
+    description:
+      "Our natural slate offers fine-grained texture with rich, dark tones. Highly resistant to frost and water, it is the preferred choice for roofing, wall cladding, and exterior paving.",
     img: "/assets/generated/slate.dim_600x400.jpg",
   },
   {
     name: "Quartzite",
     subtitle: "Pure & Resilient",
+    description:
+      "An ultra-hard metamorphic stone with crystalline shimmer and superior strength. Stone Heritage quartzite is sought after for luxury surfaces, stairs, and feature walls.",
     img: "/assets/generated/quartzite.dim_600x400.jpg",
   },
 ];
@@ -64,31 +79,43 @@ const SANDSTONE_VARIETIES = [
   {
     name: "Rajgreen",
     subtitle: "Earthy Green Tones",
+    description:
+      "A distinctive green-hued sandstone with natural moss-like tones, widely exported for garden patios and landscape architecture.",
     img: "/assets/generated/sandstone-rajgreen.dim_600x400.jpg",
   },
   {
     name: "Kandla Grey",
     subtitle: "Cool Grey Tones",
+    description:
+      "Premium grey sandstone with a cool, uniform tone. A top choice for contemporary outdoor paving and pool surrounds.",
     img: "/assets/uploads/img_20210220_181921-019d2438-dfc4-736a-afbc-0cdd53c71867-1.jpg",
   },
   {
     name: "Autumn Brown",
     subtitle: "Warm Rustic Browns",
+    description:
+      "Rich rustic brown tones with natural grain. Highly popular for driveway paving, wall cladding, and garden steps.",
     img: "/assets/generated/sandstone-autumn-brown.dim_600x400.jpg",
   },
   {
     name: "Rippon Buff",
     subtitle: "Classic Buff Cream",
+    description:
+      "Classic warm buff-cream sandstone, one of India's most exported varieties. Ideal for traditional and contemporary paving projects.",
     img: "/assets/uploads/img_0687-019d2435-194c-765d-abdb-60a12d8fc189-1.jpg",
   },
   {
     name: "Mint",
     subtitle: "Soft Mint Greens",
+    description:
+      "Soft sage-green sandstone with smooth texture, widely used in garden landscaping, terraces, and feature walls.",
     img: "/assets/generated/sandstone-mint.dim_600x400.jpg",
   },
   {
     name: "Modak",
     subtitle: "Pinkish Beige Hues",
+    description:
+      "A beautiful pinkish-beige sandstone unique to Rajasthan, popular in residential and commercial flooring and cladding.",
     img: "/assets/generated/sandstone-modak.dim_600x400.jpg",
   },
 ];
@@ -118,6 +145,94 @@ const SOCIAL_LINKS = [
   { Icon: Twitter, label: "Twitter", href: "https://twitter.com" },
   { Icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
 ];
+
+function whatsappUrl(productName: string) {
+  const text = `Hello, I would like a quote for ${productName}`;
+  return `https://wa.me/919828100255?text=${encodeURIComponent(text)}`;
+}
+
+// ─── Zoom Modal ───────────────────────────────────────────────────────────────
+
+interface ZoomModalProps {
+  src: string | null;
+  caption?: string;
+  onClose: () => void;
+}
+
+function ZoomModal({ src, caption, onClose }: ZoomModalProps) {
+  useEffect(() => {
+    if (!src) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [src, onClose]);
+
+  // Prevent body scroll when modal open
+  useEffect(() => {
+    if (src) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [src]);
+
+  return (
+    <AnimatePresence>
+      {src && (
+        <motion.div
+          key="zoom-backdrop"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/85 p-4"
+          onClick={onClose}
+          data-ocid="zoom.modal"
+        >
+          {/* Close button */}
+          <button
+            type="button"
+            onClick={onClose}
+            className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10"
+            aria-label="Close zoom"
+            data-ocid="zoom.close_button"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          {/* Image */}
+          <motion.div
+            key="zoom-image-wrap"
+            initial={{ opacity: 0, scale: 0.88 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.88 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="flex flex-col items-center gap-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={src}
+              alt={caption ?? "Product image"}
+              className="max-h-[82vh] max-w-[92vw] object-contain rounded-sm shadow-2xl"
+            />
+            {caption && (
+              <p className="text-white/80 text-xs font-semibold tracking-[0.16em] uppercase">
+                {caption}
+              </p>
+            )}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+// ─── Header ───────────────────────────────────────────────────────────────────
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -162,19 +277,30 @@ function Header() {
             ))}
           </nav>
 
-          <button
-            type="button"
-            className="lg:hidden p-2 rounded text-stone-darker hover:text-stone-gold transition-colors"
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Toggle menu"
-            data-ocid="nav.toggle"
-          >
-            {menuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://wa.me/919828100255?text=Hello%2C%20I%20would%20like%20a%20quote"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 bg-stone-gold text-white text-[11px] font-semibold tracking-widest uppercase rounded-sm hover:bg-stone-brown transition-colors duration-200"
+              data-ocid="header.request_quote"
+            >
+              Request Quote
+            </a>
+            <button
+              type="button"
+              className="lg:hidden p-2 rounded text-stone-darker hover:text-stone-gold transition-colors"
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label="Toggle menu"
+              data-ocid="nav.toggle"
+            >
+              {menuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -207,22 +333,104 @@ function Header() {
   );
 }
 
+// ─── Hero ─────────────────────────────────────────────────────────────────────
+
 function Hero() {
+  const slides = [
+    {
+      img: "/assets/generated/rajgreen-sandstone-hero.dim_1600x800.jpg",
+      caption: "Crafting Nature's Finest Stones",
+      subtitle: "Manufacturer & Exporter of Premium Indian Natural Stone",
+    },
+    {
+      img: "/assets/generated/mine-quarry.dim_1600x700.jpg",
+      caption: "Our Own Mines in Rajasthan",
+      subtitle: "Direct sourcing ensures quality and competitive pricing",
+    },
+    {
+      img: "/assets/generated/mine-blocks.dim_1600x700.jpg",
+      caption: "Stone Blocks Ready for Export",
+      subtitle: "Sandstone, Marble, Granite & More — Shipped Worldwide",
+    },
+    {
+      img: "/assets/generated/stone-factory.dim_1600x700.jpg",
+      caption: "State-of-the-Art Processing Factory",
+      subtitle:
+        "Precision cutting, polishing and finishing for global standards",
+    },
+  ];
+
+  const [current, setCurrent] = useState(0);
+  const [transitioning, setTransitioning] = useState(false);
+
+  const goTo = (index: number) => {
+    if (transitioning) return;
+    setTransitioning(true);
+    setTimeout(() => {
+      setCurrent(index);
+      setTransitioning(false);
+    }, 400);
+  };
+
+  const prev = () => goTo((current - 1 + slides.length) % slides.length);
+  const next = () => goTo((current + 1) % slides.length);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!transitioning) {
+        setTransitioning(true);
+        setTimeout(() => {
+          setCurrent((c) => (c + 1) % slides.length);
+          setTransitioning(false);
+        }, 400);
+      }
+    }, 5000);
+    return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [transitioning]);
+
+  const slide = slides[current];
+
   return (
     <section
       id="home"
       className="relative w-full min-h-[560px] lg:min-h-[700px] flex items-center overflow-hidden"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('/assets/generated/hero-stone.dim_1400x700.jpg')",
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-stone-darker/80 via-stone-darker/60 to-stone-darker/20" />
+      {/* Background images - crossfade */}
+      {slides.map((s, i) => (
+        <div
+          key={s.img}
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
+          style={{
+            backgroundImage: `url('${s.img}')`,
+            opacity: i === current ? 1 : 0,
+            zIndex: 0,
+          }}
+        />
+      ))}
+      <div className="absolute inset-0 bg-gradient-to-r from-stone-darker/80 via-stone-darker/60 to-stone-darker/20 z-[1]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      {/* Arrow buttons */}
+      <button
+        type="button"
+        onClick={prev}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/30 border border-white/20 text-white opacity-60 hover:opacity-100 transition-opacity duration-200"
+        aria-label="Previous slide"
+        data-ocid="hero.toggle"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        type="button"
+        onClick={next}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-black/30 border border-white/20 text-white opacity-60 hover:opacity-100 transition-opacity duration-200"
+        aria-label="Next slide"
+        data-ocid="hero.toggle"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
@@ -235,14 +443,17 @@ function Hero() {
               Premium Quality
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-            Crafting Nature's
-            <br />
-            Finest Stones
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 transition-opacity duration-300"
+            style={{ opacity: transitioning ? 0 : 1 }}
+          >
+            {slide.caption}
           </h1>
-          <p className="text-stone-tan text-base lg:text-lg font-medium mb-8 leading-relaxed">
-            Manufacturer &amp; Exporter of Premium
-            <br className="hidden sm:block" /> Indian Natural Stone
+          <p
+            className="text-stone-tan text-base lg:text-lg font-medium mb-8 leading-relaxed transition-opacity duration-300"
+            style={{ opacity: transitioning ? 0 : 1 }}
+          >
+            {slide.subtitle}
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -253,20 +464,45 @@ function Hero() {
               Explore Products <ArrowRight className="w-4 h-4" />
             </a>
             <a
-              href="#contact"
+              href="https://wa.me/919828100255?text=Hello%2C%20I%20would%20like%20a%20quote"
               className="inline-flex items-center gap-2 px-6 py-3 bg-stone-tan/30 border border-stone-tan text-white text-sm font-semibold tracking-widest uppercase rounded-sm hover:bg-stone-tan/50 transition-colors duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
               data-ocid="hero.secondary_button"
             >
               Request Quote
             </a>
           </div>
         </motion.div>
+
+        {/* Dot indicators */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+          {slides.map((s, i) => (
+            <button
+              type="button"
+              key={s.img}
+              onClick={() => goTo(i)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                i === current
+                  ? "bg-stone-gold w-6"
+                  : "bg-white/50 hover:bg-white/80"
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-function Products() {
+// ─── Products ─────────────────────────────────────────────────────────────────
+
+interface ProductsProps {
+  onZoom: (src: string, caption: string) => void;
+}
+
+function Products({ onZoom }: ProductsProps) {
   return (
     <section id="products" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -305,14 +541,24 @@ function Products() {
               className="group bg-card border border-stone-taupe rounded-sm overflow-hidden hover:shadow-stone transition-shadow duration-300"
               data-ocid={`products.item.${i + 1}`}
             >
-              <div className="overflow-hidden h-52">
-                <img
-                  src={stone.img}
-                  alt={stone.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+              <div className="overflow-hidden h-52 relative">
+                <button
+                  type="button"
+                  className="w-full h-full cursor-zoom-in border-0 p-0 bg-transparent"
+                  onClick={() => onZoom(stone.img, stone.name)}
+                  aria-label={`Zoom ${stone.name}`}
+                >
+                  <img
+                    src={stone.img}
+                    alt={stone.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </button>
+                <div className="absolute top-2 right-2 flex items-center justify-center w-7 h-7 rounded-full bg-black/40 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                  <ZoomIn className="w-3.5 h-3.5" />
+                </div>
               </div>
-              <div className="p-5 flex items-center justify-between">
+              <div className="p-5 flex flex-col gap-3">
                 <div>
                   <h3 className="font-bold text-sm tracking-widest uppercase text-stone-darker">
                     {stone.name}
@@ -320,14 +566,29 @@ function Products() {
                   <p className="text-stone-muted text-xs tracking-wide mt-0.5">
                     {stone.subtitle}
                   </p>
+                  <p className="text-stone-muted text-xs leading-relaxed mt-1">
+                    {stone.description}
+                  </p>
                 </div>
-                <button
-                  type="button"
-                  className="flex items-center gap-1 text-xs font-semibold tracking-widest uppercase text-stone-gold hover:text-stone-dark transition-colors"
-                  data-ocid={`products.button.${i + 1}`}
-                >
-                  View More <ChevronRight className="w-3.5 h-3.5" />
-                </button>
+                <div className="flex items-center justify-between">
+                  <a
+                    href={whatsappUrl(stone.name)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-stone-gold text-stone-gold text-[10px] font-semibold tracking-widest uppercase rounded-sm hover:bg-stone-gold hover:text-white transition-colors duration-200"
+                    data-ocid={`products.primary_button.${i + 1}`}
+                  >
+                    <MessageCircle className="w-3 h-3" />
+                    Request Quote
+                  </a>
+                  <button
+                    type="button"
+                    className="flex items-center gap-1 text-xs font-semibold tracking-widest uppercase text-stone-gold hover:text-stone-dark transition-colors"
+                    data-ocid={`products.button.${i + 1}`}
+                  >
+                    View More <ChevronRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -363,7 +624,7 @@ function Products() {
           </div>
 
           <div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
             data-ocid="sandstone.list"
           >
             {SANDSTONE_VARIETIES.map((variety, i) => (
@@ -376,29 +637,171 @@ function Products() {
                 className="group bg-card border border-stone-taupe rounded-sm overflow-hidden hover:shadow-stone transition-shadow duration-300"
                 data-ocid={`sandstone.item.${i + 1}`}
               >
-                <div className="overflow-hidden h-40">
-                  <img
-                    src={variety.img}
-                    alt={variety.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                <div className="overflow-hidden h-40 relative">
+                  <button
+                    type="button"
+                    className="w-full h-full cursor-zoom-in border-0 p-0 bg-transparent"
+                    onClick={() => onZoom(variety.img, variety.name)}
+                    aria-label={`Zoom ${variety.name}`}
+                  >
+                    <img
+                      src={variety.img}
+                      alt={variety.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </button>
+                  <div className="absolute top-2 right-2 flex items-center justify-center w-7 h-7 rounded-full bg-black/40 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                    <ZoomIn className="w-3.5 h-3.5" />
+                  </div>
                 </div>
-                <div className="p-4">
-                  <h4 className="font-bold text-xs tracking-widest uppercase text-stone-darker">
-                    {variety.name}
-                  </h4>
-                  <p className="text-stone-muted text-[11px] tracking-wide mt-0.5">
-                    {variety.subtitle}
-                  </p>
+                <div className="p-4 flex flex-col gap-2">
+                  <div>
+                    <h4 className="font-bold text-xs tracking-widest uppercase text-stone-darker">
+                      {variety.name}
+                    </h4>
+                    <p className="text-stone-muted text-[11px] tracking-wide mt-0.5">
+                      {variety.subtitle}
+                    </p>
+                    <p className="text-stone-muted text-xs leading-snug mt-1">
+                      {variety.description}
+                    </p>
+                  </div>
+                  <a
+                    href={whatsappUrl(variety.name)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-start inline-flex items-center gap-1.5 px-3 py-1.5 border border-stone-gold text-stone-gold text-[10px] font-semibold tracking-widest uppercase rounded-sm hover:bg-stone-gold hover:text-white transition-colors duration-200"
+                    data-ocid={`sandstone.primary_button.${i + 1}`}
+                  >
+                    <MessageCircle className="w-3 h-3" />
+                    Request Quote
+                  </a>
                 </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
+
+        {/* Woodland Sandstone Blocks – Mine Direct Export */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16"
+        >
+          <div className="flex items-center gap-4 mb-8">
+            <div className="flex-1 h-px bg-stone-taupe" />
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <div className="w-6 h-px bg-stone-gold" />
+                <Diamond
+                  className="w-3 h-3 text-stone-gold"
+                  fill="currentColor"
+                />
+                <div className="w-6 h-px bg-stone-gold" />
+              </div>
+              <h3 className="text-lg lg:text-xl font-bold tracking-[0.14em] uppercase text-stone-darker">
+                Woodland Sandstone Blocks
+              </h3>
+              <p className="mt-1 text-stone-muted text-xs tracking-wide">
+                Direct from our own mines — bulk export available
+              </p>
+            </div>
+            <div className="flex-1 h-px bg-stone-taupe" />
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="group bg-card border border-stone-taupe rounded-sm overflow-hidden hover:shadow-stone transition-shadow duration-300 grid grid-cols-1 md:grid-cols-2"
+            data-ocid="woodland.blocks.card"
+          >
+            <div className="overflow-hidden h-72 md:h-auto relative">
+              <button
+                type="button"
+                className="w-full h-full cursor-zoom-in border-0 p-0 bg-transparent"
+                onClick={() =>
+                  onZoom(
+                    "/assets/uploads/bl11-019d244f-f8c1-742d-b7f7-fca4715bfb21-1.jpeg",
+                    "Woodland Sandstone Blocks",
+                  )
+                }
+                aria-label="Zoom Woodland Sandstone Blocks"
+              >
+                <img
+                  src="/assets/uploads/bl11-019d244f-f8c1-742d-b7f7-fca4715bfb21-1.jpeg"
+                  alt="Woodland Sandstone Blocks — Mine Direct"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </button>
+              <div className="absolute top-3 right-3 flex items-center justify-center w-8 h-8 rounded-full bg-black/40 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                <ZoomIn className="w-4 h-4" />
+              </div>
+            </div>
+            <div className="p-8 flex flex-col justify-center gap-5">
+              <div>
+                <span className="text-stone-gold text-xs font-semibold tracking-[0.18em] uppercase">
+                  Mine Direct Export
+                </span>
+                <h4 className="text-xl font-bold tracking-wider uppercase text-stone-darker mt-2 mb-3">
+                  Woodland Sandstone Blocks
+                </h4>
+                <p className="text-stone-muted text-sm leading-relaxed">
+                  Sourced directly from our own woodland sandstone mines in
+                  Rajasthan, these large-format raw blocks are precision-cut for
+                  bulk export. The stone showcases warm buff-brown layered tones
+                  with uniform grain — ideal for architectural cladding,
+                  monumental projects, and dimensional stone processing.
+                </p>
+              </div>
+              <ul className="space-y-2">
+                {[
+                  "Direct from our own quarry — no middlemen",
+                  "Large-format blocks available for bulk export",
+                  "Warm buff-brown tones, fine natural grain",
+                  "Custom dimensions on request",
+                  "Export-ready with full documentation",
+                ].map((point) => (
+                  <li
+                    key={point}
+                    className="flex items-start gap-2 text-xs text-stone-muted"
+                  >
+                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-stone-gold shrink-0" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-3 mt-2">
+                <a
+                  href={whatsappUrl("Woodland Sandstone Blocks")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-stone-dark text-white text-xs font-bold tracking-widest uppercase rounded-sm hover:bg-stone-brown transition-colors duration-200"
+                  data-ocid="woodland.primary_button"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Request Quote on WhatsApp
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-stone-gold text-stone-gold text-xs font-bold tracking-widest uppercase rounded-sm hover:bg-stone-gold hover:text-white transition-colors duration-200"
+                  data-ocid="woodland.secondary_button"
+                >
+                  Send Enquiry
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
 }
+
+// ─── About ────────────────────────────────────────────────────────────────────
 
 function About() {
   return (
@@ -464,6 +867,8 @@ function About() {
     </section>
   );
 }
+
+// ─── Projects ─────────────────────────────────────────────────────────────────
 
 function Projects() {
   return (
@@ -538,6 +943,8 @@ function Projects() {
     </section>
   );
 }
+
+// ─── Contact ──────────────────────────────────────────────────────────────────
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -622,7 +1029,7 @@ function Contact() {
               <div>
                 <label
                   htmlFor="contact-email"
-                  className="block text-xs font-semibold tracking-widest uppercase text-stone-darker mb-2"
+                  className="block text-xs font-semibold tracking-widests uppercase text-stone-darker mb-2"
                 >
                   Email Address
                 </label>
@@ -641,7 +1048,7 @@ function Contact() {
               <div>
                 <label
                   htmlFor="contact-message"
-                  className="block text-xs font-semibold tracking-widest uppercase text-stone-darker mb-2"
+                  className="block text-xs font-semibold tracking-widests uppercase text-stone-darker mb-2"
                 >
                   Message
                 </label>
@@ -707,7 +1114,7 @@ function Contact() {
                   <MapPin className="w-4 h-4 text-stone-gold" />
                 </div>
                 <div>
-                  <div className="text-xs font-semibold tracking-widest uppercase text-stone-darker mb-1">
+                  <div className="text-xs font-semibold tracking-widests uppercase text-stone-darker mb-1">
                     Address
                   </div>
                   <div className="text-stone-muted text-sm leading-relaxed">
@@ -723,7 +1130,7 @@ function Contact() {
                   <Mail className="w-4 h-4 text-stone-gold" />
                 </div>
                 <div>
-                  <div className="text-xs font-semibold tracking-widest uppercase text-stone-darker mb-1">
+                  <div className="text-xs font-semibold tracking-widests uppercase text-stone-darker mb-1">
                     Email
                   </div>
                   <a
@@ -740,7 +1147,7 @@ function Contact() {
                   <Phone className="w-4 h-4 text-stone-gold" />
                 </div>
                 <div>
-                  <div className="text-xs font-semibold tracking-widest uppercase text-stone-darker mb-1">
+                  <div className="text-xs font-semibold tracking-widests uppercase text-stone-darker mb-1">
                     Phone
                   </div>
                   <a
@@ -757,7 +1164,7 @@ function Contact() {
                   <Globe className="w-4 h-4 text-stone-gold" />
                 </div>
                 <div>
-                  <div className="text-xs font-semibold tracking-widest uppercase text-stone-darker mb-1">
+                  <div className="text-xs font-semibold tracking-widests uppercase text-stone-darker mb-1">
                     Export Destinations
                   </div>
                   <div className="text-stone-muted text-sm">
@@ -788,6 +1195,8 @@ function Contact() {
     </section>
   );
 }
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
 
 function Footer() {
   const year = new Date().getFullYear();
@@ -927,14 +1336,34 @@ function Footer() {
   );
 }
 
+// ─── App ──────────────────────────────────────────────────────────────────────
+
 export default function App() {
+  const [zoomedImage, setZoomedImage] = useState<{
+    src: string;
+    caption: string;
+  } | null>(null);
+
+  const handleZoom = (src: string, caption: string) => {
+    setZoomedImage({ src, caption });
+  };
+
+  const handleCloseZoom = () => {
+    setZoomedImage(null);
+  };
+
   return (
     <div className="min-h-screen">
       <Toaster position="top-right" />
+      <ZoomModal
+        src={zoomedImage?.src ?? null}
+        caption={zoomedImage?.caption}
+        onClose={handleCloseZoom}
+      />
       <Header />
       <main>
         <Hero />
-        <Products />
+        <Products onZoom={handleZoom} />
         <About />
         <Projects />
         <Contact />
