@@ -110,3 +110,16 @@
 .nav-item {
   position: relative;
 }
+
+@keyframes wa-blink {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(37, 211, 102, 0);
+  }
+}
+.wa-blink {
+  animation: wa-blink 1.5s ease-in-out infinite;
+}

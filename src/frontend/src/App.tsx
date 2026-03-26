@@ -484,34 +484,37 @@ function MainNav() {
               textDecoration: "none",
             }}
           >
-            <img
-              src="/assets/generated/sh-stone-heritage-logo-transparent.dim_400x400.png"
-              alt="Stone Heritage Logo"
-              style={{ height: 48, width: 48, objectFit: "contain" }}
-            />
-            <div>
-              <div
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                lineHeight: 1,
+              }}
+            >
+              <span
                 style={{
-                  fontFamily: "Oswald, sans-serif",
-                  fontSize: 18,
-                  fontWeight: 700,
+                  fontSize: 22,
+                  fontWeight: 800,
+                  letterSpacing: "0.12em",
                   color: "#1a2332",
-                  letterSpacing: "0.06em",
-                  lineHeight: 1.1,
-                }}
-              >
-                SH STONE HERITAGE
-              </div>
-              <div
-                style={{
-                  fontSize: 9,
-                  color: "#d4760a",
-                  letterSpacing: "0.15em",
                   textTransform: "uppercase",
+                  fontFamily: "Georgia, serif",
                 }}
               >
-                Manufacturer &amp; Exporter
-              </div>
+                Stone Heritage
+              </span>
+              <span
+                style={{
+                  fontSize: 10,
+                  fontWeight: 500,
+                  letterSpacing: "0.18em",
+                  color: "#b07d3a",
+                  textTransform: "uppercase",
+                  marginTop: 2,
+                }}
+              >
+                Manufacturer &amp; Exporter of Natural Stone
+              </span>
             </div>
           </a>
 
@@ -2350,38 +2353,37 @@ function Footer() {
                 marginBottom: 12,
               }}
             >
-              <img
-                src="/assets/generated/sh-stone-heritage-logo-transparent.dim_400x400.png"
-                alt="Stone Heritage"
+              <div
                 style={{
-                  height: 40,
-                  width: 40,
-                  objectFit: "contain",
-                  filter: "brightness(1.2)",
+                  display: "flex",
+                  flexDirection: "column",
+                  lineHeight: 1,
                 }}
-              />
-              <div>
-                <div
+              >
+                <span
                   style={{
-                    fontFamily: "Oswald, sans-serif",
-                    fontSize: 16,
-                    fontWeight: 700,
-                    color: "#fff",
-                    letterSpacing: "0.06em",
+                    fontSize: 20,
+                    fontWeight: 800,
+                    letterSpacing: "0.12em",
+                    color: "#ffffff",
+                    textTransform: "uppercase",
+                    fontFamily: "Georgia, serif",
                   }}
                 >
-                  SH STONE HERITAGE
-                </div>
-                <div
+                  Stone Heritage
+                </span>
+                <span
                   style={{
                     fontSize: 9,
-                    color: "#d4760a",
-                    letterSpacing: "0.12em",
+                    fontWeight: 500,
+                    letterSpacing: "0.18em",
+                    color: "#b07d3a",
                     textTransform: "uppercase",
+                    marginTop: 3,
                   }}
                 >
-                  Manufacturer &amp; Exporter
-                </div>
+                  Manufacturer &amp; Exporter of Natural Stone
+                </span>
               </div>
             </div>
             <p style={{ fontSize: 12, color: "#9ca3af", lineHeight: 1.7 }}>
@@ -2611,7 +2613,7 @@ function Footer() {
                   borderRadius: 3,
                   textDecoration: "none",
                 }}
-                className="hover:opacity-90 transition-opacity"
+                className="hover:opacity-90 transition-opacity wa-blink"
                 data-ocid="footer.whatsapp.button"
               >
                 <MessageCircle size={14} color="#fff" />
