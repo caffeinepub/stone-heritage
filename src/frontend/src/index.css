@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,25 +7,25 @@
 @layer base {
   :root {
     --radius: 0.25rem;
-    --background: 0.98 0.005 75;
-    --foreground: 0.2 0.02 60;
+    --background: 0.97 0.008 80;
+    --foreground: 0.18 0.03 160;
     --card: 1 0 0;
-    --card-foreground: 0.2 0.02 60;
+    --card-foreground: 0.18 0.03 160;
     --popover: 1 0 0;
-    --popover-foreground: 0.2 0.02 60;
-    --primary: 0.22 0.04 240;
-    --primary-foreground: 0.98 0.005 75;
-    --secondary: 0.97 0.01 75;
-    --secondary-foreground: 0.22 0.04 240;
-    --muted: 0.94 0.01 75;
-    --muted-foreground: 0.5 0.025 60;
-    --accent: 0.62 0.16 55;
-    --accent-foreground: 1 0 0;
+    --popover-foreground: 0.18 0.03 160;
+    --primary: 0.22 0.06 160;
+    --primary-foreground: 0.97 0.005 80;
+    --secondary: 0.96 0.01 80;
+    --secondary-foreground: 0.22 0.06 160;
+    --muted: 0.93 0.012 80;
+    --muted-foreground: 0.5 0.02 80;
+    --accent: 0.7 0.14 75;
+    --accent-foreground: 0.15 0.04 160;
     --destructive: 0.577 0.245 27.325;
     --destructive-foreground: 0.985 0 0;
-    --border: 0.88 0.015 75;
-    --input: 0.88 0.015 75;
-    --ring: 0.62 0.16 55;
+    --border: 0.87 0.015 80;
+    --input: 0.87 0.015 80;
+    --ring: 0.7 0.14 75;
     --chart-1: 0.646 0.222 41.116;
     --chart-2: 0.6 0.118 184.704;
     --chart-3: 0.398 0.07 227.392;
@@ -51,20 +51,29 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Roboto", sans-serif;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
   }
 }
 
 .btn-cta {
-  background: #d4760a;
-  color: #fff;
-  font-family: "Oswald", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  background: #c9a84c;
+  color: #1b3a2d;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 10px 22px;
   border-radius: 3px;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
   display: inline-block;
   cursor: pointer;
   border: none;
@@ -72,7 +81,8 @@
   text-decoration: none;
 }
 .btn-cta:hover {
-  background: #b85f05;
+  background: #a8882e;
+  color: #fff;
 }
 
 .product-card {
@@ -80,10 +90,10 @@
   background: #fff;
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid #e8e3dc;
+  border: 1px solid #e5e0d8;
 }
 .product-card:hover {
-  box-shadow: 0 8px 28px rgba(26, 35, 50, 0.15);
+  box-shadow: 0 8px 28px rgba(27, 58, 45, 0.15);
   transform: translateY(-3px);
 }
 
@@ -94,7 +104,7 @@
   background: #fff;
   min-width: 200px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  border-top: 3px solid #d4760a;
+  border-top: 3px solid #c9a84c;
   z-index: 100;
   opacity: 0;
   pointer-events: none;

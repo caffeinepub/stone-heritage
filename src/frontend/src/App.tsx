@@ -205,6 +205,17 @@ const ALL_PRODUCTS = [
     img: "/assets/uploads/bl11-019d244f-f8c1-742d-b7f7-fca4715bfb21-1.jpeg",
     desc: "Export-grade sandstone blocks from our own mines. Direct supply for international projects.",
   },
+  {
+    name: "Rajgreen Bullnose Shootblast Tiles",
+    cat: "Sandstone",
+    img: "/assets/uploads/img_20251212_124950-019d287a-4a2a-73de-b938-87ca8950a96d-1.jpg",
+    desc: "Rajgreen sandstone bullnose shootblast tiles. Size: 600×300×30mm. Shot-blasted surface finish with precision-cut bullnose edge. Perfect for pool surrounds, steps, and garden edging.",
+    images: [
+      "/assets/uploads/img_20251212_124950-019d287a-4a2a-73de-b938-87ca8950a96d-1.jpg",
+      "/assets/uploads/img_20251212_125004-019d287a-4a6d-7728-a93d-5fe2a67bafa8-2.jpg",
+      "/assets/uploads/img_20251212_125003-019d287a-4ab3-773c-a1b6-f803922f4607-3.jpg",
+    ],
+  },
 ];
 
 const WHY_CHOOSE = [
@@ -312,7 +323,7 @@ function TopBar() {
   return (
     <div
       style={{
-        background: "#1a2332",
+        background: "#1b3a2d",
         color: "#aaa",
         fontSize: 12,
         padding: "6px 0",
@@ -404,7 +415,7 @@ function TopBar() {
 
 function TrustBar() {
   return (
-    <div style={{ background: "#f0ece5", borderBottom: "1px solid #e0dbd3" }}>
+    <div style={{ background: "#f0ece2", borderBottom: "1px solid #e0dbd3" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
         <div
           style={{
@@ -428,16 +439,16 @@ function TrustBar() {
                 minWidth: 100,
               }}
             >
-              <b.icon size={22} style={{ color: "#d4760a" }} />
+              <b.icon size={22} style={{ color: "#c9a84c" }} />
               <span
                 style={{
                   fontSize: 10,
                   fontWeight: 700,
                   letterSpacing: "0.07em",
-                  color: "#1a2332",
+                  color: "#1b3a2d",
                   textTransform: "uppercase",
                   textAlign: "center",
-                  fontFamily: "Oswald, sans-serif",
+                  fontFamily: "Playfair Display, serif",
                 }}
               >
                 {b.label}
@@ -496,7 +507,7 @@ function MainNav() {
                   fontSize: 22,
                   fontWeight: 800,
                   letterSpacing: "0.12em",
-                  color: "#1a2332",
+                  color: "#1b3a2d",
                   textTransform: "uppercase",
                   fontFamily: "Georgia, serif",
                 }}
@@ -508,7 +519,7 @@ function MainNav() {
                   fontSize: 10,
                   fontWeight: 500,
                   letterSpacing: "0.18em",
-                  color: "#b07d3a",
+                  color: "#c9a84c",
                   textTransform: "uppercase",
                   marginTop: 2,
                 }}
@@ -534,14 +545,14 @@ function MainNav() {
                     padding: "8px 10px",
                     fontSize: 12,
                     fontWeight: 600,
-                    color: "#1a2332",
+                    color: "#1b3a2d",
                     letterSpacing: "0.05em",
                     textTransform: "uppercase",
                     whiteSpace: "nowrap",
-                    fontFamily: "Oswald, sans-serif",
+                    fontFamily: "Playfair Display, serif",
                     textDecoration: "none",
                   }}
-                  className="hover:text-amber-600 transition-colors"
+                  className="hover:text-yellow-700 transition-colors"
                 >
                   {item.label}
                   {item.sub && <ChevronDown size={12} />}
@@ -560,7 +571,7 @@ function MainNav() {
                           borderBottom: "1px solid #f3f4f6",
                           textDecoration: "none",
                         }}
-                        className="hover:bg-orange-50 hover:text-amber-700 transition-colors"
+                        className="hover:bg-emerald-50 hover:text-yellow-800 transition-colors"
                       >
                         {s}
                       </a>
@@ -591,7 +602,7 @@ function MainNav() {
                 background: "none",
                 border: "none",
                 cursor: "pointer",
-                color: "#1a2332",
+                color: "#1b3a2d",
               }}
               data-ocid="nav.mobile.toggle"
             >
@@ -610,7 +621,7 @@ function MainNav() {
             transition={{ duration: 0.2 }}
             style={{
               background: "#fff",
-              borderTop: "2px solid #d4760a",
+              borderTop: "2px solid #c9a84c",
               overflow: "hidden",
             }}
           >
@@ -646,15 +657,15 @@ function MainNav() {
                       padding: "10px 8px",
                       fontSize: 13,
                       fontWeight: 700,
-                      color: "#1a2332",
-                      fontFamily: "Oswald, sans-serif",
+                      color: "#1b3a2d",
+                      fontFamily: "Playfair Display, serif",
                       textTransform: "uppercase",
                       letterSpacing: "0.05em",
                       background: "none",
                       border: "none",
                       cursor: "pointer",
                     }}
-                    className="hover:text-amber-600"
+                    className="hover:text-yellow-700"
                   >
                     {item.label}
                     {item.sub && (
@@ -685,7 +696,7 @@ function MainNav() {
                             borderBottom: "1px solid #f3f4f6",
                             textDecoration: "none",
                           }}
-                          className="hover:text-amber-600"
+                          className="hover:text-yellow-700"
                         >
                           {s}
                         </a>
@@ -791,8 +802,8 @@ function HeroSlider() {
                 style={{
                   fontSize: 11,
                   letterSpacing: "0.2em",
-                  color: "#d4760a",
-                  fontFamily: "Oswald, sans-serif",
+                  color: "#c9a84c",
+                  fontFamily: "Playfair Display, serif",
                   textTransform: "uppercase",
                   marginBottom: 8,
                 }}
@@ -801,7 +812,7 @@ function HeroSlider() {
               </div>
               <h1
                 style={{
-                  fontFamily: "Oswald, sans-serif",
+                  fontFamily: "Playfair Display, serif",
                   fontSize: "clamp(28px, 5vw, 52px)",
                   fontWeight: 700,
                   color: "#fff",
@@ -836,7 +847,7 @@ function HeroSlider() {
                     padding: "10px 22px",
                     border: "2px solid #fff",
                     color: "#fff",
-                    fontFamily: "Oswald, sans-serif",
+                    fontFamily: "Playfair Display, serif",
                     fontWeight: 600,
                     fontSize: 13,
                     letterSpacing: "0.05em",
@@ -926,7 +937,7 @@ function HeroSlider() {
               width: i === current ? 24 : 8,
               height: 8,
               borderRadius: 4,
-              background: i === current ? "#d4760a" : "rgba(255,255,255,0.5)",
+              background: i === current ? "#c9a84c" : "rgba(255,255,255,0.5)",
               border: "none",
               cursor: "pointer",
               transition: "all 0.3s",
@@ -945,8 +956,8 @@ function SectionHeading({ tag, title }: { tag: string; title: string }) {
         style={{
           fontSize: 11,
           letterSpacing: "0.18em",
-          color: "#d4760a",
-          fontFamily: "Oswald, sans-serif",
+          color: "#c9a84c",
+          fontFamily: "Playfair Display, serif",
           textTransform: "uppercase",
           marginBottom: 6,
         }}
@@ -955,10 +966,10 @@ function SectionHeading({ tag, title }: { tag: string; title: string }) {
       </div>
       <h2
         style={{
-          fontFamily: "Oswald, sans-serif",
+          fontFamily: "Playfair Display, serif",
           fontSize: "clamp(22px, 3vw, 32px)",
           fontWeight: 700,
-          color: "#1a2332",
+          color: "#1b3a2d",
           letterSpacing: "0.06em",
           textTransform: "uppercase",
         }}
@@ -969,7 +980,7 @@ function SectionHeading({ tag, title }: { tag: string; title: string }) {
         style={{
           width: 50,
           height: 3,
-          background: "#d4760a",
+          background: "#c9a84c",
           margin: "8px auto 0",
           borderRadius: 2,
         }}
@@ -980,7 +991,7 @@ function SectionHeading({ tag, title }: { tag: string; title: string }) {
 
 function AboutSection() {
   return (
-    <section id="about" style={{ background: "#f8f5f0", padding: "72px 0" }}>
+    <section id="about" style={{ background: "#f7f4ef", padding: "72px 0" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -1005,7 +1016,7 @@ function AboutSection() {
                 position: "absolute",
                 bottom: -20,
                 right: -20,
-                background: "#d4760a",
+                background: "#c9a84c",
                 padding: "20px 24px",
                 borderRadius: 4,
                 textAlign: "center",
@@ -1013,7 +1024,7 @@ function AboutSection() {
             >
               <div
                 style={{
-                  fontFamily: "Oswald, sans-serif",
+                  fontFamily: "Playfair Display, serif",
                   fontSize: 36,
                   fontWeight: 700,
                   color: "#fff",
@@ -1045,8 +1056,8 @@ function AboutSection() {
               style={{
                 fontSize: 11,
                 letterSpacing: "0.18em",
-                color: "#d4760a",
-                fontFamily: "Oswald, sans-serif",
+                color: "#c9a84c",
+                fontFamily: "Playfair Display, serif",
                 textTransform: "uppercase",
                 marginBottom: 6,
               }}
@@ -1055,10 +1066,10 @@ function AboutSection() {
             </div>
             <h2
               style={{
-                fontFamily: "Oswald, sans-serif",
+                fontFamily: "Playfair Display, serif",
                 fontSize: "clamp(24px, 3.5vw, 36px)",
                 fontWeight: 700,
-                color: "#1a2332",
+                color: "#1b3a2d",
                 letterSpacing: "0.04em",
                 textTransform: "uppercase",
                 marginBottom: 16,
@@ -1072,7 +1083,7 @@ function AboutSection() {
               style={{
                 width: 50,
                 height: 3,
-                background: "#d4760a",
+                background: "#c9a84c",
                 marginBottom: 20,
                 borderRadius: 2,
               }}
@@ -1113,14 +1124,14 @@ function AboutSection() {
               ].map(([n, l]) => (
                 <div
                   key={l}
-                  style={{ borderLeft: "3px solid #d4760a", paddingLeft: 12 }}
+                  style={{ borderLeft: "3px solid #c9a84c", paddingLeft: 12 }}
                 >
                   <div
                     style={{
-                      fontFamily: "Oswald, sans-serif",
+                      fontFamily: "Playfair Display, serif",
                       fontSize: 22,
                       fontWeight: 700,
-                      color: "#1a2332",
+                      color: "#1b3a2d",
                     }}
                   >
                     {n}
@@ -1168,24 +1179,24 @@ function WhyChooseSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
               style={{
-                background: "#f8f5f0",
+                background: "#f7f4ef",
                 borderRadius: 4,
                 padding: "28px 24px",
-                borderBottom: "3px solid #d4760a",
+                borderBottom: "3px solid #c9a84c",
                 transition: "box-shadow 0.2s, transform 0.2s",
               }}
               className="hover:shadow-stone hover:-translate-y-1"
             >
               <item.icon
                 size={32}
-                style={{ color: "#d4760a", marginBottom: 12 }}
+                style={{ color: "#c9a84c", marginBottom: 12 }}
               />
               <h3
                 style={{
-                  fontFamily: "Oswald, sans-serif",
+                  fontFamily: "Playfair Display, serif",
                   fontSize: 17,
                   fontWeight: 600,
-                  color: "#1a2332",
+                  color: "#1b3a2d",
                   marginBottom: 8,
                   letterSpacing: "0.04em",
                   textTransform: "uppercase",
@@ -1208,7 +1219,7 @@ function TrendingProducts({
   onZoom,
 }: { onZoom: (img: string, name: string) => void }) {
   return (
-    <section id="products" style={{ background: "#f8f5f0", padding: "72px 0" }}>
+    <section id="products" style={{ background: "#f7f4ef", padding: "72px 0" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
         <SectionHeading tag="Best Sellers" title="Trending Products" />
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -1287,10 +1298,10 @@ function TrendingProducts({
               <div style={{ padding: "10px 12px 12px" }}>
                 <h3
                   style={{
-                    fontFamily: "Oswald, sans-serif",
+                    fontFamily: "Playfair Display, serif",
                     fontSize: 14,
                     fontWeight: 600,
-                    color: "#1a2332",
+                    color: "#1b3a2d",
                     marginBottom: 4,
                   }}
                 >
@@ -1341,15 +1352,15 @@ function BrowseRange() {
     { label: "Quartzite", img: "/assets/generated/quartzite.dim_600x400.jpg" },
   ];
   return (
-    <section style={{ background: "#1a2332", padding: "64px 0" }}>
+    <section style={{ background: "#1b3a2d", padding: "64px 0" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div
             style={{
               fontSize: 11,
               letterSpacing: "0.18em",
-              color: "#d4760a",
-              fontFamily: "Oswald, sans-serif",
+              color: "#c9a84c",
+              fontFamily: "Playfair Display, serif",
               textTransform: "uppercase",
               marginBottom: 6,
             }}
@@ -1358,7 +1369,7 @@ function BrowseRange() {
           </div>
           <h2
             style={{
-              fontFamily: "Oswald, sans-serif",
+              fontFamily: "Playfair Display, serif",
               fontSize: "clamp(22px, 3vw, 32px)",
               fontWeight: 700,
               color: "#fff",
@@ -1372,7 +1383,7 @@ function BrowseRange() {
             style={{
               width: 50,
               height: 3,
-              background: "#d4760a",
+              background: "#c9a84c",
               margin: "8px auto 0",
               borderRadius: 2,
             }}
@@ -1416,7 +1427,7 @@ function BrowseRange() {
               >
                 <span
                   style={{
-                    fontFamily: "Oswald, sans-serif",
+                    fontFamily: "Playfair Display, serif",
                     fontWeight: 600,
                     fontSize: 13,
                     color: "#fff",
@@ -1482,7 +1493,7 @@ function AllProductsSection({
               style={{
                 padding: "7px 16px",
                 fontSize: 12,
-                fontFamily: "Oswald, sans-serif",
+                fontFamily: "Playfair Display, serif",
                 fontWeight: 600,
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
@@ -1490,8 +1501,8 @@ function AllProductsSection({
                 borderRadius: 3,
                 cursor: "pointer",
                 transition: "all 0.2s",
-                borderColor: activeFilter === f ? "#d4760a" : "#e5e7eb",
-                background: activeFilter === f ? "#d4760a" : "#fff",
+                borderColor: activeFilter === f ? "#c9a84c" : "#e5e7eb",
+                background: activeFilter === f ? "#c9a84c" : "#fff",
                 color: activeFilter === f ? "#fff" : "#374151",
               }}
             >
@@ -1551,13 +1562,48 @@ function AllProductsSection({
                   <ZoomIn size={14} color="#fff" />
                 </button>
               </div>
+              {(p as any).images && (p as any).images.length > 1 && (
+                <div style={{ display: "flex", gap: 3, padding: "4px 4px 0" }}>
+                  {(p as any).images.map((thumb: string, ti: number) => (
+                    <button
+                      key={thumb}
+                      type="button"
+                      onClick={() =>
+                        onZoom(thumb, `${p.name} - Photo ${ti + 1}`)
+                      }
+                      style={{
+                        flex: 1,
+                        height: 44,
+                        border:
+                          ti === 0 ? "2px solid #c8a96e" : "1px solid #e5e7eb",
+                        borderRadius: 2,
+                        overflow: "hidden",
+                        cursor: "pointer",
+                        background: "none",
+                        padding: 0,
+                      }}
+                      aria-label={`View photo ${ti + 1}`}
+                    >
+                      <img
+                        src={thumb}
+                        alt={`${p.name} ${ti + 1}`}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
               <div style={{ padding: "14px 16px 16px" }}>
                 <h3
                   style={{
-                    fontFamily: "Oswald, sans-serif",
+                    fontFamily: "Playfair Display, serif",
                     fontSize: 16,
                     fontWeight: 600,
-                    color: "#1a2332",
+                    color: "#1b3a2d",
                     marginBottom: 6,
                     letterSpacing: "0.03em",
                     textTransform: "uppercase",
@@ -1589,7 +1635,7 @@ function AllProductsSection({
                         key={v.name}
                         style={{
                           fontSize: 10,
-                          background: "#f0ece5",
+                          background: "#f0ece2",
                           color: "#6b7280",
                           padding: "2px 7px",
                           borderRadius: 2,
@@ -1648,15 +1694,15 @@ function MiningSection({
     },
   ];
   return (
-    <section style={{ background: "#1a2332", padding: "72px 0" }}>
+    <section style={{ background: "#1b3a2d", padding: "72px 0" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <div
             style={{
               fontSize: 11,
               letterSpacing: "0.18em",
-              color: "#d4760a",
-              fontFamily: "Oswald, sans-serif",
+              color: "#c9a84c",
+              fontFamily: "Playfair Display, serif",
               textTransform: "uppercase",
               marginBottom: 6,
             }}
@@ -1665,7 +1711,7 @@ function MiningSection({
           </div>
           <h2
             style={{
-              fontFamily: "Oswald, sans-serif",
+              fontFamily: "Playfair Display, serif",
               fontSize: "clamp(22px, 3vw, 32px)",
               fontWeight: 700,
               color: "#fff",
@@ -1679,7 +1725,7 @@ function MiningSection({
             style={{
               width: 50,
               height: 3,
-              background: "#d4760a",
+              background: "#c9a84c",
               margin: "8px auto 0",
               borderRadius: 2,
             }}
@@ -1734,7 +1780,7 @@ function MiningSection({
                 <div style={{ padding: "12px 14px", width: "100%" }}>
                   <div
                     style={{
-                      fontFamily: "Oswald, sans-serif",
+                      fontFamily: "Playfair Display, serif",
                       fontSize: 13,
                       fontWeight: 600,
                       color: "#fff",
@@ -1768,7 +1814,7 @@ function MiningSection({
 
 function CertificationsSection() {
   return (
-    <section style={{ background: "#f8f5f0", padding: "60px 0" }}>
+    <section style={{ background: "#f7f4ef", padding: "60px 0" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
         <SectionHeading tag="Trust & Quality" title="Awards & Certifications" />
         <div
@@ -1800,13 +1846,13 @@ function CertificationsSection() {
               }}
               className="hover:border-amber-500 hover:shadow-stone"
             >
-              <c.icon size={32} style={{ color: "#d4760a" }} />
+              <c.icon size={32} style={{ color: "#c9a84c" }} />
               <div
                 style={{
-                  fontFamily: "Oswald, sans-serif",
+                  fontFamily: "Playfair Display, serif",
                   fontSize: 14,
                   fontWeight: 700,
-                  color: "#1a2332",
+                  color: "#1b3a2d",
                   textAlign: "center",
                   letterSpacing: "0.04em",
                 }}
@@ -1885,14 +1931,14 @@ function ProjectsSection({
                     position: "absolute",
                     top: 12,
                     left: 12,
-                    background: "#d4760a",
+                    background: "#c9a84c",
                     padding: "3px 10px",
                     borderRadius: 2,
                   }}
                 >
                   <span
                     style={{
-                      fontFamily: "Oswald, sans-serif",
+                      fontFamily: "Playfair Display, serif",
                       fontSize: 12,
                       fontWeight: 600,
                       color: "#fff",
@@ -1905,10 +1951,10 @@ function ProjectsSection({
               <div style={{ padding: "16px 18px 18px" }}>
                 <h3
                   style={{
-                    fontFamily: "Oswald, sans-serif",
+                    fontFamily: "Playfair Display, serif",
                     fontSize: 17,
                     fontWeight: 700,
-                    color: "#1a2332",
+                    color: "#1b3a2d",
                     marginBottom: 4,
                     textTransform: "uppercase",
                     letterSpacing: "0.03em",
@@ -1916,7 +1962,7 @@ function ProjectsSection({
                 >
                   {p.title}
                 </h3>
-                <p style={{ fontSize: 12, color: "#d4760a", marginBottom: 10 }}>
+                <p style={{ fontSize: 12, color: "#c9a84c", marginBottom: 10 }}>
                   {p.location}
                 </p>
                 <div className="grid grid-cols-3 gap-2 mb-4">
@@ -1967,7 +2013,7 @@ function ProjectsSection({
 
 function TestimonialsSection() {
   return (
-    <section style={{ background: "#f8f5f0", padding: "72px 0" }}>
+    <section style={{ background: "#f7f4ef", padding: "72px 0" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
         <SectionHeading tag="Client Feedback" title="What Our Clients Say" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1980,7 +2026,7 @@ function TestimonialsSection() {
               transition={{ delay: i * 0.12, duration: 0.5 }}
               style={{
                 background: "#fff",
-                borderLeft: "4px solid #d4760a",
+                borderLeft: "4px solid #c9a84c",
                 borderRadius: 4,
                 padding: 24,
                 boxShadow: "0 2px 12px rgba(26,35,50,0.07)",
@@ -1992,8 +2038,8 @@ function TestimonialsSection() {
                   <Star
                     key={`star-${j}`}
                     size={15}
-                    fill="#d4760a"
-                    color="#d4760a"
+                    fill="#c9a84c"
+                    color="#c9a84c"
                   />
                 ))}
               </div>
@@ -2014,11 +2060,11 @@ function TestimonialsSection() {
                     width: 40,
                     height: 40,
                     borderRadius: "50%",
-                    background: "#d4760a",
+                    background: "#c9a84c",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontFamily: "Oswald, sans-serif",
+                    fontFamily: "Playfair Display, serif",
                     fontWeight: 700,
                     color: "#fff",
                     fontSize: 16,
@@ -2030,10 +2076,10 @@ function TestimonialsSection() {
                 <div>
                   <div
                     style={{
-                      fontFamily: "Oswald, sans-serif",
+                      fontFamily: "Playfair Display, serif",
                       fontSize: 14,
                       fontWeight: 700,
-                      color: "#1a2332",
+                      color: "#1b3a2d",
                     }}
                   >
                     {t.name}
@@ -2077,8 +2123,8 @@ function ContactSection() {
     borderRadius: 3,
     fontSize: 13,
     outline: "none",
-    background: "#f8f5f0",
-    fontFamily: "Roboto, sans-serif",
+    background: "#f7f4ef",
+    fontFamily: "DM Sans, sans-serif",
   };
   const labelStyle = {
     fontSize: 12,
@@ -2088,7 +2134,7 @@ function ContactSection() {
     marginBottom: 5,
     textTransform: "uppercase" as const,
     letterSpacing: "0.06em",
-    fontFamily: "Oswald, sans-serif",
+    fontFamily: "Playfair Display, serif",
   };
 
   return (
@@ -2104,10 +2150,10 @@ function ContactSection() {
           >
             <h3
               style={{
-                fontFamily: "Oswald, sans-serif",
+                fontFamily: "Playfair Display, serif",
                 fontSize: 20,
                 fontWeight: 700,
-                color: "#1a2332",
+                color: "#1b3a2d",
                 marginBottom: 20,
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
@@ -2213,10 +2259,10 @@ function ContactSection() {
           >
             <h3
               style={{
-                fontFamily: "Oswald, sans-serif",
+                fontFamily: "Playfair Display, serif",
                 fontSize: 20,
                 fontWeight: 700,
-                color: "#1a2332",
+                color: "#1b3a2d",
                 marginBottom: 20,
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
@@ -2239,7 +2285,7 @@ function ContactSection() {
                     style={{
                       width: 44,
                       height: 44,
-                      background: "#d4760a",
+                      background: "#c9a84c",
                       borderRadius: 3,
                       display: "flex",
                       alignItems: "center",
@@ -2257,7 +2303,7 @@ function ContactSection() {
                         textTransform: "uppercase",
                         letterSpacing: "0.1em",
                         marginBottom: 2,
-                        fontFamily: "Oswald, sans-serif",
+                        fontFamily: "Playfair Display, serif",
                       }}
                     >
                       {item.label}
@@ -2288,7 +2334,7 @@ function ContactSection() {
                 color: "#fff",
                 padding: "14px 20px",
                 borderRadius: 4,
-                fontFamily: "Oswald, sans-serif",
+                fontFamily: "Playfair Display, serif",
                 fontWeight: 600,
                 fontSize: 14,
                 letterSpacing: "0.05em",
@@ -2308,7 +2354,7 @@ function ContactSection() {
                 borderRadius: 4,
                 border: "1px solid #e5e7eb",
                 height: 180,
-                background: "#f0ece5",
+                background: "#f0ece2",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -2318,7 +2364,7 @@ function ContactSection() {
                 <MapPin
                   size={32}
                   style={{
-                    color: "#d4760a",
+                    color: "#c9a84c",
                     margin: "0 auto 8px",
                     display: "block",
                   }}
@@ -2341,7 +2387,7 @@ function ContactSection() {
 function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer style={{ background: "#1a2332", color: "#9ca3af" }}>
+    <footer style={{ background: "#1b3a2d", color: "#9ca3af" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 16px" }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -2377,7 +2423,7 @@ function Footer() {
                     fontSize: 9,
                     fontWeight: 500,
                     letterSpacing: "0.18em",
-                    color: "#b07d3a",
+                    color: "#c9a84c",
                     textTransform: "uppercase",
                     marginTop: 3,
                   }}
@@ -2404,7 +2450,7 @@ function Footer() {
                   justifyContent: "center",
                   transition: "background 0.2s",
                 }}
-                className="hover:bg-amber-600"
+                className="hover:bg-yellow-700"
               >
                 <Facebook size={13} color="#fff" />
               </a>
@@ -2421,7 +2467,7 @@ function Footer() {
                   justifyContent: "center",
                   transition: "background 0.2s",
                 }}
-                className="hover:bg-amber-600"
+                className="hover:bg-yellow-700"
               >
                 <Instagram size={13} color="#fff" />
               </a>
@@ -2438,7 +2484,7 @@ function Footer() {
                   justifyContent: "center",
                   transition: "background 0.2s",
                 }}
-                className="hover:bg-amber-600"
+                className="hover:bg-yellow-700"
               >
                 <Linkedin size={13} color="#fff" />
               </a>
@@ -2448,14 +2494,14 @@ function Footer() {
           <div>
             <h4
               style={{
-                fontFamily: "Oswald, sans-serif",
+                fontFamily: "Playfair Display, serif",
                 fontSize: 14,
                 fontWeight: 600,
                 color: "#fff",
                 textTransform: "uppercase",
                 letterSpacing: "0.1em",
                 marginBottom: 14,
-                borderBottom: "2px solid #d4760a",
+                borderBottom: "2px solid #c9a84c",
                 paddingBottom: 8,
               }}
             >
@@ -2487,7 +2533,7 @@ function Footer() {
                       style={{
                         width: 5,
                         height: 5,
-                        background: "#d4760a",
+                        background: "#c9a84c",
                         borderRadius: "50%",
                         flexShrink: 0,
                       }}
@@ -2502,14 +2548,14 @@ function Footer() {
           <div>
             <h4
               style={{
-                fontFamily: "Oswald, sans-serif",
+                fontFamily: "Playfair Display, serif",
                 fontSize: 14,
                 fontWeight: 600,
                 color: "#fff",
                 textTransform: "uppercase",
                 letterSpacing: "0.1em",
                 marginBottom: 14,
-                borderBottom: "2px solid #d4760a",
+                borderBottom: "2px solid #c9a84c",
                 paddingBottom: 8,
               }}
             >
@@ -2540,7 +2586,7 @@ function Footer() {
                       style={{
                         width: 5,
                         height: 5,
-                        background: "#d4760a",
+                        background: "#c9a84c",
                         borderRadius: "50%",
                         flexShrink: 0,
                       }}
@@ -2555,14 +2601,14 @@ function Footer() {
           <div>
             <h4
               style={{
-                fontFamily: "Oswald, sans-serif",
+                fontFamily: "Playfair Display, serif",
                 fontSize: 14,
                 fontWeight: 600,
                 color: "#fff",
                 textTransform: "uppercase",
                 letterSpacing: "0.1em",
                 marginBottom: 14,
-                borderBottom: "2px solid #d4760a",
+                borderBottom: "2px solid #c9a84c",
                 paddingBottom: 8,
               }}
             >
@@ -2572,7 +2618,7 @@ function Footer() {
               <div style={{ display: "flex", gap: 8 }}>
                 <MapPin
                   size={14}
-                  style={{ color: "#d4760a", flexShrink: 0, marginTop: 2 }}
+                  style={{ color: "#c9a84c", flexShrink: 0, marginTop: 2 }}
                 />
                 <span
                   style={{ fontSize: 12, color: "#9ca3af", lineHeight: 1.6 }}
@@ -2585,7 +2631,7 @@ function Footer() {
                 style={{ display: "flex", gap: 8, textDecoration: "none" }}
                 className="hover:text-white transition-colors"
               >
-                <Phone size={14} style={{ color: "#d4760a", flexShrink: 0 }} />
+                <Phone size={14} style={{ color: "#c9a84c", flexShrink: 0 }} />
                 <span style={{ fontSize: 12, color: "#9ca3af" }}>
                   +91 9828100255
                 </span>
@@ -2595,7 +2641,7 @@ function Footer() {
                 style={{ display: "flex", gap: 8, textDecoration: "none" }}
                 className="hover:text-white transition-colors"
               >
-                <Mail size={14} style={{ color: "#d4760a", flexShrink: 0 }} />
+                <Mail size={14} style={{ color: "#c9a84c", flexShrink: 0 }} />
                 <span style={{ fontSize: 12, color: "#9ca3af" }}>
                   stonekota@gmail.com
                 </span>
@@ -2646,7 +2692,7 @@ function Footer() {
               href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(typeof window !== "undefined" ? window.location.hostname : "")}`}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#d4760a", textDecoration: "none" }}
+              style={{ color: "#c9a84c", textDecoration: "none" }}
               className="hover:underline"
             >
               caffeine.ai
@@ -2714,7 +2760,7 @@ function ZoomModal({
             position: "absolute",
             top: -16,
             right: -16,
-            background: "#d4760a",
+            background: "#c9a84c",
             border: "none",
             borderRadius: "50%",
             width: 36,
@@ -2735,7 +2781,7 @@ function ZoomModal({
             marginTop: 8,
             color: "rgba(255,255,255,0.7)",
             fontSize: 13,
-            fontFamily: "Oswald, sans-serif",
+            fontFamily: "Playfair Display, serif",
             letterSpacing: "0.08em",
             textTransform: "uppercase",
           }}

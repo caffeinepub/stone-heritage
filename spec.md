@@ -1,44 +1,23 @@
 # Stone Heritage
 
 ## Current State
-Full-stack marketing website for Stone Heritage (Indian natural stone manufacturer/exporter). Has hero slider, products section, about, projects, contact form, footer with WhatsApp. Single-page React app with all sections in App.tsx.
+The site uses a navy (#1a2332) + warm amber (#d4760a) + sand (#f8f5f0) color palette throughout index.css and App.tsx (hardcoded hex values). Fonts are Roboto + Oswald via Google Fonts.
 
 ## Requested Changes (Diff)
 
 ### Add
-- Top bar with contact info (phone + email) and social icons
-- Trust badges row: Certified Suppliers, Est. 1985, Quality Stones, 24/7 Support, Fast Delivery
-- Mega-menu style navigation with dropdowns per stone category
-- "Why Choose Us" section with 6 value pillars (Quality, Pioneers, Punctuality, Satisfaction, Integrity, Best Team)
-- "Trending Products" section with horizontal cards (Kandla Grey, Rajgreen, Rippon Buff, Mint, etc.)
-- "Browse Our Range" category tab section
-- "Mining" image gallery section
-- "Awards & Certifications" section with certification logos
-- Client testimonials section
-- Multi-column footer with Quick Links, Useful Links, contact details columns
+- New premium color palette: deep forest green (#1b3a2d) as the primary dark color, polished gold (#c9a84c) as the accent, and warm ivory (#f7f4ef) for light backgrounds
+- Updated font pairing: Playfair Display (headings) + General Sans (body) from pre-bundled woff2 files
 
 ### Modify
-- Overall visual style to match umangstone.com: professional, earthy tones (stone greys, warm creams, dark navy/charcoal nav), clean typography
-- Header layout: top utility bar + main nav bar with logo centered or left
-- Hero section: full-width with overlay text
-- Products section: card layout with subcategory dropdown/tabs
-- Projects section: carousel cards with year/quantity/material details
-- Contact section: two-column (India office) with form
-- Footer: dark background, multi-column with logo + tagline
+- index.css: Update OKLCH tokens, @font-face declarations, body font, btn-cta color, and all hardcoded color references
+- App.tsx: Replace all instances of #1a2332 → #1b3a2d (deep green), #d4760a → #c9a84c (polished gold), #b85f05 → #a8882e (gold hover), #b07d3a → #c9a84c, #f8f5f0 → #f7f4ef, #f0ece5 → #f0ece2
+- Tailwind config: Update primary/accent color references if present
 
 ### Remove
-- Nothing to remove — enhance existing content with new layout
+- Google Fonts import for Roboto/Oswald (replace with pre-bundled fonts)
 
 ## Implementation Plan
-1. Redesign header with top utility bar + trust badges row + mega-menu nav
-2. Keep hero slider (existing images), update overlay text and CTA buttons style
-3. Add Why Choose Us section (6 pillars grid)
-4. Restructure Products into Trending Products cards + Browse By Category section
-5. Add Mining gallery section (use existing quarry/mine images)
-6. Add Awards & Certifications section (generate cert placeholder images or use badges)
-7. Keep Projects section, update to carousel card format with project details
-8. Add testimonials section (3 client reviews)
-9. Update Contact section to two-column layout
-10. Redesign footer to dark multi-column format
-11. Maintain all existing WhatsApp quote button functionality
-12. Maintain image zoom modal functionality
+1. Update index.css: new OKLCH tokens, @font-face for Playfair Display + General Sans, update btn-cta, product-card, nav-dropdown colors
+2. Update App.tsx: global search-replace all hardcoded hex colors to new palette
+3. Validate and build
