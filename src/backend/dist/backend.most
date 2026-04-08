@@ -1,0 +1,30 @@
+// Version: 1.0.0
+type ContactSubmission__390548495 =
+  {email : Text; message : Text; name : Text; timestamp : Time__900049286};
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type Int__270357528 = Int__616954475;
+type Int__616954475 = Int;
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+type Principal__224692764 = Principal;
+type Principal__390546707 = Principal__224692764;
+type Time__796480547 = Int__270357528;
+type Time__900049286 = Time__796480547;
+actor {
+  stable adminMap :
+    {
+      var root : Node__46230540<Principal__390546707, Bool>;
+      var size : Nat__490723111
+    };
+  stable submissions :
+    {
+      var root : Node__46230540<Text, ContactSubmission__390548495>;
+      var size : Nat__490723111
+    }
+};

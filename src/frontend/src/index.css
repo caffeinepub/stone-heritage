@@ -39,6 +39,9 @@
     --sidebar-accent-foreground: 0.205 0 0;
     --sidebar-border: 0.922 0 0;
     --sidebar-ring: 0.708 0 0;
+
+    /* Natural stone texture SVG noise — sandstone grain */
+    --stone-noise-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='stone'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23stone)' opacity='0.07'/%3E%3C/svg%3E");
   }
 
   * {
@@ -50,7 +53,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-family: "DM Sans", sans-serif;
   }
 
@@ -62,6 +65,101 @@
   h6 {
     font-family: "Playfair Display", serif;
   }
+}
+
+/* ── Natural Stone Texture Utilities ─────────────────────────────────────── */
+
+/* Light stone texture — for cream/white section backgrounds */
+.stone-texture-light {
+  background-image: radial-gradient(
+      ellipse at 18% 25%,
+      rgba(180, 148, 96, 0.1) 0%,
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 78% 72%,
+      rgba(160, 128, 78, 0.08) 0%,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 52% 48%,
+      rgba(200, 168, 110, 0.06) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 90% 10%,
+      rgba(174, 142, 90, 0.07) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 8% 88%,
+      rgba(190, 158, 100, 0.06) 0%,
+      transparent 44%
+    ), var(--stone-noise-svg);
+  background-repeat: repeat, repeat, repeat, repeat, repeat, repeat;
+}
+
+/* Medium cream stone texture — for #f0ece2 trust bar, #f7f4ef sections */
+.stone-texture-cream {
+  background-image: radial-gradient(
+      ellipse at 22% 35%,
+      rgba(160, 128, 72, 0.12) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 75% 65%,
+      rgba(140, 110, 58, 0.09) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 50% 20%,
+      rgba(188, 155, 88, 0.08) 0%,
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 85% 85%,
+      rgba(170, 138, 76, 0.07) 0%,
+      transparent 38%
+    ), linear-gradient(128deg, rgba(210, 185, 140, 0.04) 0%, transparent 60%),
+    var(--stone-noise-svg);
+  background-repeat: repeat, repeat, repeat, repeat, repeat, repeat;
+}
+
+/* White sections (product cards background, projects, contact) */
+.stone-texture-white {
+  background-image: radial-gradient(
+      ellipse at 15% 30%,
+      rgba(200, 170, 110, 0.07) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 68%,
+      rgba(178, 148, 90, 0.05) 0%,
+      transparent 46%
+    ),
+    radial-gradient(
+      ellipse at 45% 55%,
+      rgba(215, 185, 128, 0.05) 0%,
+      transparent 54%
+    ), var(--stone-noise-svg);
+  background-repeat: repeat, repeat, repeat, repeat;
+}
+
+/* Warm body background with subtle stone grain */
+body {
+  background-color: #f5efe4;
+  background-image: radial-gradient(
+      ellipse at 10% 20%,
+      rgba(180, 148, 96, 0.08) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 88% 78%,
+      rgba(160, 128, 78, 0.06) 0%,
+      transparent 42%
+    ), var(--stone-noise-svg);
+  background-attachment: fixed;
+  background-repeat: repeat;
 }
 
 .btn-cta {

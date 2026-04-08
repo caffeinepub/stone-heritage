@@ -31,26 +31,30 @@ import { toast } from "sonner";
 const HERO_SLIDES = [
   {
     img: "/assets/generated/rajgreen-sandstone-hero.dim_1600x800.jpg",
-    title: "Premium Natural Stones",
-    subtitle: "Direct from Indian Quarries to the World",
+    title: "Rajgreen — Born in Rajasthan",
+    subtitle:
+      "India's most sought-after sandstone, straight from our own quarries in Bijoliya.",
     tag: "Rajgreen Sandstone",
   },
   {
     img: "/assets/generated/mine-quarry.dim_1600x700.jpg",
-    title: "Our Own Mines",
-    subtitle: "Quality Assured at the Source",
-    tag: "Our Quarry",
+    title: "We Own the Mines",
+    subtitle:
+      "No third-party sourcing. Every slab traced back to our quarry face in Rajasthan.",
+    tag: "Direct from Our Quarry",
   },
   {
     img: "/assets/uploads/bl11-019d244f-f8c1-742d-b7f7-fca4715bfb21-1.jpeg",
-    title: "Export Ready Blocks",
-    subtitle: "Sandstone Blocks for Global Markets",
-    tag: "Stone Blocks",
+    title: "Shipping to 50+ Countries",
+    subtitle:
+      "Bulk export orders handled with care — from our yard to your port, on schedule.",
+    tag: "Global Export",
   },
   {
     img: "/assets/generated/stone-factory.dim_1600x700.jpg",
-    title: "State-of-the-Art Processing",
-    subtitle: "Precision Cut. Perfect Finish.",
+    title: "Factory Direct. No Middlemen.",
+    subtitle:
+      "Buy at quarry price. Custom sizes cut fresh in our own processing unit.",
     tag: "Our Factory",
   },
 ];
@@ -100,11 +104,11 @@ const NAV_ITEMS = [
 ];
 
 const TRUST_BADGES = [
-  { icon: Shield, label: "Certified Suppliers" },
-  { icon: Clock, label: "Since 2012" },
-  { icon: CheckCircle, label: "Quality Stones" },
-  { icon: MessageCircle, label: "24/7 Support" },
-  { icon: Truck, label: "Fast Delivery" },
+  { icon: Shield, label: "ISO Certified Quality" },
+  { icon: Clock, label: "In Business Since 2012" },
+  { icon: CheckCircle, label: "Mine-to-Market Sourcing" },
+  { icon: MessageCircle, label: "Dedicated Export Support" },
+  { icon: Truck, label: "Reliable On-Time Dispatch" },
 ];
 
 const STONES = [
@@ -112,37 +116,37 @@ const STONES = [
     name: "Kandla Grey",
     cat: "Sandstone",
     img: "/assets/uploads/img_20210220_181921-019d2438-dfc4-736a-afbc-0cdd53c71867-1.jpg",
-    desc: "Premium grey sandstone with a cool, uniform tone. Top choice for contemporary outdoor paving.",
+    desc: "Cool-toned grey sandstone with a dense, even grain. Hugely popular across European paving and driveway projects.",
   },
   {
     name: "Rajgreen",
     cat: "Sandstone",
     img: "/assets/generated/sandstone-rajgreen.dim_600x400.jpg",
-    desc: "Distinctive green-hued sandstone with natural moss-like tones. Widely exported for garden patios.",
+    desc: "A rare green-hued sandstone native to Bijoliya. Prized for garden patios, landscape steps, and feature walling.",
   },
   {
     name: "Rippon Buff",
     cat: "Sandstone",
     img: "/assets/uploads/img_0687-019d2435-194c-765d-abdb-60a12d8fc189-1.jpg",
-    desc: "Classic warm buff-cream sandstone — India's most exported variety. Ideal for paving projects.",
+    desc: "Honey-gold buff sandstone — India's highest-volume export variety. Versatile for paving, coping, and facades.",
   },
   {
     name: "Mint",
     cat: "Sandstone",
     img: "/assets/generated/sandstone-mint.dim_600x400.jpg",
-    desc: "Soft sage-green sandstone with smooth texture for garden landscaping and feature walls.",
+    desc: "Pale sage sandstone with a clean, fresh look. Ideal for interior floors, courtyard paving, and wall cladding.",
   },
   {
     name: "Granite",
     cat: "Granite",
     img: "/assets/generated/granite.dim_600x400.jpg",
-    desc: "Premium Indian granite combining extraordinary hardness with natural beauty.",
+    desc: "Hard-wearing Indian granite with striking natural patterns. Built for countertops, heavy traffic floors, and exteriors.",
   },
   {
     name: "Marble",
     cat: "Marble",
     img: "/assets/generated/marble.dim_600x400.jpg",
-    desc: "Timeless elegance with lustrous veining. Perfect for interiors and luxury installations.",
+    desc: "Silky-smooth marble with rich veining. The mark of premium interiors, hotel lobbies, and luxury residences.",
   },
 ];
 
@@ -150,7 +154,7 @@ const ALL_PRODUCTS = [
   {
     name: "Sandstone",
     img: "/assets/generated/sandstone.dim_600x400.jpg",
-    desc: "Warm earthy tones and exceptional durability. Ideal for flooring, cladding, and paving.",
+    desc: "Rajasthan sandstone in a full spectrum of colours and textures — naturally durable, suitable for both architectural cladding and landscape paving. Available in honed, natural, flamed, and bush-hammered finishes for export.",
     varieties: [
       {
         name: "Rajgreen",
@@ -178,42 +182,114 @@ const ALL_PRODUCTS = [
   {
     name: "Granite",
     img: "/assets/generated/granite.dim_600x400.jpg",
-    desc: "Extraordinary hardness with natural beauty. For countertops and commercial surfaces.",
+    desc: "Indian granite sourced from South India's finest quarries — exceptionally hard, scratch-resistant, and bacteria-free. Used extensively in commercial countertops, flooring, and exterior cladding across global projects.",
   },
   {
     name: "Marble",
     img: "/assets/generated/marble.dim_600x400.jpg",
-    desc: "Timeless elegance with lustrous veining. Perfect for luxury architectural installations.",
+    desc: "Hand-selected Indian marble with rich veining and a luminous polish. Perfect for luxury hotel lobbies, residential interiors, feature staircases, and bathroom surfaces — available in blocks, slabs, or cut-to-size tiles.",
   },
   {
     name: "Limestone",
     img: "/assets/generated/limestone.dim_600x400.jpg",
-    desc: "Classic building material with subtle texture. Used in facades and heritage restoration.",
+    desc: "Earthy-toned Indian limestone valued for its understated texture and versatility. Widely specified for heritage restoration, building facades, and decorative flooring — available in multiple surface finishes for export.",
   },
   {
     name: "Slate",
     img: "/assets/generated/slate.dim_600x400.jpg",
-    desc: "Fine-grained texture with rich dark tones. Highly resistant for roofing and cladding.",
+    desc: "Dense, fine-grained Indian slate in classic dark tones with a characteristic natural split face. Frost-resistant and low-maintenance, making it a strong choice for roofing, wall cladding, and outdoor flooring.",
   },
   {
     name: "Quartzite",
     img: "/assets/generated/quartzite.dim_600x400.jpg",
-    desc: "Ultra-hard metamorphic stone with crystalline shimmer for luxury surfaces and stairs.",
+    desc: "Ultra-hard metamorphic quartzite with a crystalline, shimmering surface. Ideal for high-traffic interior floors, staircases, and feature walls where strength and beauty are equally important.",
   },
   {
     name: "Woodland Sandstone Blocks",
     img: "/assets/uploads/bl11-019d244f-f8c1-742d-b7f7-fca4715bfb21-1.jpeg",
-    desc: "Export-grade sandstone blocks from our own mines. Direct supply for international projects.",
+    desc: "Massive sandstone blocks direct from our own woodland quarry in Rajasthan. Each block is inspection-graded before loading, ensuring consistent colour and structural integrity for monumental and architectural projects worldwide.",
   },
   {
     name: "Rajgreen Bullnose Shootblast Tiles",
     cat: "Sandstone",
     img: "/assets/uploads/img_20251212_124950-019d287a-4a2a-73de-b938-87ca8950a96d-1.jpg",
-    desc: "Rajgreen sandstone bullnose shootblast tiles. Size: 600×300×30mm. Shot-blasted surface finish with precision-cut bullnose edge. Perfect for pool surrounds, steps, and garden edging.",
+    desc: "Precision-crafted Rajgreen sandstone tiles in 600×300×30mm with a shot-blasted surface finish and a clean machine-cut bullnose edge on one long side. The textured surface provides excellent grip — ideal for pool copings, outdoor steps, and garden borders.",
     images: [
       "/assets/uploads/img_20251212_124950-019d287a-4a2a-73de-b938-87ca8950a96d-1.jpg",
       "/assets/uploads/img_20251212_125004-019d287a-4a6d-7728-a93d-5fe2a67bafa8-2.jpg",
       "/assets/uploads/img_20251212_125003-019d287a-4ab3-773c-a1b6-f803922f4607-3.jpg",
+    ],
+  },
+  {
+    name: "Rajgreen Block Step",
+    cat: "Sandstone",
+    img: "/assets/placeholder-stone.jpg",
+    desc: "Rajgreen sandstone block steps with a natural split face finish — robust, weather-resistant, and beautifully textured. Available in a range of custom dimensions to suit garden paths, entrance steps, and commercial landscaping. Suitable for both residential and large-scale landscape projects.",
+  },
+  {
+    name: "Kandla Grey Sandstone Tiles",
+    cat: "Sandstone",
+    img: "/assets/img_20210220_181921-019d6b59-fa51-73f1-945d-8370cdae18bd.jpg",
+    desc: "Consistent cool-grey sandstone tiles in a range of formats including cobbles, pavers, and large-format slabs. Kandla Grey is a favourite for contemporary driveways, garden paths, and terrace flooring — low maintenance and frost-resistant for year-round outdoor use.",
+    images: [
+      "/assets/img_20210220_181921-019d6b59-fa51-73f1-945d-8370cdae18bd.jpg",
+      "/assets/img_20210215_122920-019d6b59-fc6b-7599-9da8-eb1870148496.jpg",
+    ],
+  },
+  {
+    name: "Teak Brown Sandstone Tiles",
+    cat: "Sandstone",
+    img: "/assets/img_0686-019d6b59-fec7-702d-9bf5-bdccc1748294.jpg",
+    desc: "Warm teak-brown sandstone tiles with golden undertones that deepen with age. Available in natural, honed, and flamed finishes — widely used for interior flooring, exterior paving, and decorative façade cladding in residential and commercial builds.",
+    images: [
+      "/assets/img_0686-019d6b59-fec7-702d-9bf5-bdccc1748294.jpg",
+      "/assets/img_0685-019d6b59-fef3-7479-9cbd-3fe7d0c8dccb.jpg",
+    ],
+  },
+  {
+    name: "Camel Dust Sandstone Tiles",
+    cat: "Sandstone",
+    img: "/assets/img_0683-019d6b59-ff48-744a-971e-085628625e5b.jpg",
+    desc: "Soft buff-gold sandstone with a fine grain and warm camel tone that complements both modern and traditional architecture. Popular for pool surrounds, garden patios, and exterior wall cladding — available in natural split and sandblasted finishes for export.",
+    images: [
+      "/assets/img_0683-019d6b59-ff48-744a-971e-085628625e5b.jpg",
+      "/assets/img_0684-019d6b59-ff88-743b-9ab9-c36557e49ddf.jpg",
+    ],
+  },
+  {
+    name: "Mint Sandstone Tiles",
+    cat: "Sandstone",
+    img: "/assets/img_0682-019d6b59-ff45-7202-ac92-736869eca7c9.jpg",
+    desc: "Pale-toned mint sandstone with a subtle beige-cream base and light grey veining. Smooth-textured and versatile — a go-to choice for indoor floors, covered verandas, garden walkways, and feature walling in the UK and Australian markets.",
+    images: [
+      "/assets/img_0682-019d6b59-ff45-7202-ac92-736869eca7c9.jpg",
+      "/assets/img_0681-019d6b5a-006c-747e-9dd0-6a860718f012.jpg",
+    ],
+  },
+  {
+    name: "Rippon Buff Sandstone Tiles",
+    cat: "Sandstone",
+    img: "/assets/img_0687-019d6b59-fc05-711f-94c8-6d5d78c68dbc.jpg",
+    desc: "India's most trusted export-grade sandstone in a warm honey-yellow tone. Rippon Buff tiles are specified by UK and European landscape architects for driveway paving, garden coping, and heritage-style wall facing — available in standard and bespoke sizes.",
+    images: ["/assets/img_0687-019d6b59-fc05-711f-94c8-6d5d78c68dbc.jpg"],
+  },
+  {
+    name: "Multi Color Sandstone Tiles",
+    cat: "Sandstone",
+    img: "/assets/fb_img_1532922101056-019d6b59-f631-708a-a235-32c3e7b9708e.jpg",
+    desc: "A naturally blended sandstone palette combining buff, grey, brown, and rust tones in a single tile. Creates eye-catching, organic-looking surfaces for patios, poolside areas, and stepping stone pathways — each batch uniquely different.",
+    images: [
+      "/assets/fb_img_1532922101056-019d6b59-f631-708a-a235-32c3e7b9708e.jpg",
+      "/assets/img_20251209_085719-019d6b59-fd87-72e6-8547-4c32291e9b6e.jpg",
+    ],
+  },
+  {
+    name: "Sandstone Factory Yard — Mixed Slabs",
+    cat: "Sandstone",
+    img: "/assets/img_20251209_085937-019d6b59-fbc1-71ef-8f3a-834639a430c4.jpg",
+    desc: "A selection of mixed natural sandstone slabs directly from our Rajasthan factory yard — quality-sorted, colour-graded, and ready for immediate bulk export. Ideal for importers and distributors who need variety in a single container shipment.",
+    images: [
+      "/assets/img_20251209_085937-019d6b59-fbc1-71ef-8f3a-834639a430c4.jpg",
     ],
   },
 ];
@@ -221,62 +297,62 @@ const ALL_PRODUCTS = [
 const WHY_CHOOSE = [
   {
     icon: CheckCircle,
-    title: "Premium Quality",
-    desc: "Every stone is hand-selected and quality-tested before export to ensure it meets international standards.",
+    title: "Direct Mine Owners",
+    desc: "We quarry, process, and export from our own mines in Bijoliya, Rajasthan — giving you complete traceability and zero supply-chain uncertainty.",
   },
   {
     icon: Award,
-    title: "Industry Pioneers",
-    desc: "Over 15+ years of expertise as a leading manufacturer and exporter of Indian natural stones worldwide.",
+    title: "Custom Sizes Cut to Order",
+    desc: "Need an unusual dimension? Our factory cuts to your specifications. No standard-size-only restrictions — you spec it, we manufacture it.",
   },
   {
     icon: Clock,
-    title: "On-Time Delivery",
-    desc: "We honour commitments. Your orders are processed, packed, and shipped to meet your project timelines.",
+    title: "Zero Middlemen Pricing",
+    desc: "Buying direct from the quarry owner means no agent markups. You receive factory-gate prices with no hidden layers between you and the source.",
   },
   {
     icon: ThumbsUp,
-    title: "100% Satisfaction",
-    desc: "Our dedicated support team ensures your complete satisfaction from inquiry to final delivery.",
+    title: "15+ Years Export Experience",
+    desc: "Since 2012, we have shipped to over 50 countries. Our export documentation, packaging, and logistics are handled in-house by an experienced team.",
   },
   {
     icon: Shield,
-    title: "Business Integrity",
-    desc: "Transparent pricing, honest sourcing, and reliable contracts with every international client.",
+    title: "Strict Pre-Shipment Testing",
+    desc: "Every consignment is inspected for colour consistency, thickness tolerance, and surface defects before it leaves our yard — rejections happen at our cost, not yours.",
   },
   {
     icon: Users,
-    title: "Expert Team",
-    desc: "Our skilled geologists, craftsmen, and export specialists ensure world-class service at every step.",
+    title: "On-Time Dispatch, Every Time",
+    desc: "We commit to delivery dates and honour them. Our dispatch team tracks every order from processing to port, keeping you informed at every stage.",
   },
 ];
 
 const PROJECTS = [
   {
-    title: "Commercial Complex",
-    location: "Rajasthan, India",
+    title: "Luxury Hotel Lobby Flooring",
+    location: "Dubai, UAE",
     year: 2023,
-    area: "25,000 sqft",
+    area: "18,000 sqft",
     material: "Sandstone",
-    stone: "Kandla Grey",
+    stone: "Rajgreen Honed",
     img: "/assets/generated/project-facade.dim_700x500.jpg",
   },
   {
-    title: "Heritage Hotel",
-    location: "Jaipur, India",
+    title: "Heritage Building Restoration",
+    location: "Yorkshire, United Kingdom",
     year: 2022,
-    area: "40,000 sqft",
-    material: "Mixed",
-    stone: "Rajgreen + Marble",
+    area: "32,000 sqft",
+    material: "Sandstone",
+    stone: "Rajgreen Pitched",
     img: "/assets/generated/project-patio.dim_700x500.jpg",
   },
   {
-    title: "Export Project",
-    location: "United Kingdom",
+    title: "Residential Estate Paving",
+    location: "Melbourne, Australia",
     year: 2021,
-    area: "15,000 sqft",
+    area: "22,500 sqft",
     material: "Sandstone",
-    stone: "Rippon Buff",
+    stone: "Rippon Buff Natural",
     img: "/assets/generated/quarry.dim_800x600.jpg",
   },
 ];
@@ -286,21 +362,21 @@ const TESTIMONIALS = [
     name: "Ahmed Al-Rashid",
     location: "UAE",
     flag: "🇦🇪",
-    text: "Excellent quality sandstone blocks. Delivery was on time and packaging was outstanding. Stone Heritage is our go-to supplier.",
+    text: "The colour consistency across the entire shipment was exceptional — every pallet matched perfectly. Stone Heritage delivered on time and the packing was solid. We have already placed a repeat order.",
     rating: 5,
   },
   {
     name: "David Thompson",
     location: "United Kingdom",
     flag: "🇬🇧",
-    text: "Very professional team. The Rajgreen sandstone exceeded our expectations. Perfect for our landscaping projects.",
+    text: "We specified custom dimensions for a heritage restoration project and Stone Heritage cut every piece to tolerance. The Rajgreen pitched face was exactly what the architect required. Professional team throughout.",
     rating: 5,
   },
   {
     name: "Marco Rossi",
     location: "Italy",
     flag: "🇮🇹",
-    text: "Stone Heritage is our trusted supplier for all natural stone requirements. Consistent quality over many years.",
+    text: "We have been sourcing Indian sandstone for ten years and Stone Heritage stands out for their consistency. No surprises on quality, no delays on dispatch. That kind of reliability is rare in this trade.",
     rating: 5,
   },
 ];
@@ -415,7 +491,10 @@ function TopBar() {
 
 function TrustBar() {
   return (
-    <div style={{ background: "#f0ece2", borderBottom: "1px solid #e0dbd3" }}>
+    <div
+      className="stone-texture-cream"
+      style={{ background: "#f0ece2", borderBottom: "1px solid #e0dbd3" }}
+    >
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
         <div
           style={{
@@ -991,7 +1070,11 @@ function SectionHeading({ tag, title }: { tag: string; title: string }) {
 
 function AboutSection() {
   return (
-    <section id="about" style={{ background: "#f7f4ef", padding: "72px 0" }}>
+    <section
+      id="about"
+      className="stone-texture-cream"
+      style={{ background: "#f7f4ef", padding: "72px 0" }}
+    >
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -1031,7 +1114,7 @@ function AboutSection() {
                   lineHeight: 1,
                 }}
               >
-                35+
+                15+
               </div>
               <div
                 style={{
@@ -1041,7 +1124,7 @@ function AboutSection() {
                   textTransform: "uppercase",
                 }}
               >
-                Years Experience
+                Years in Business
               </div>
             </div>
           </motion.div>
@@ -1062,7 +1145,7 @@ function AboutSection() {
                 marginBottom: 6,
               }}
             >
-              About Us
+              About Stone Heritage
             </div>
             <h2
               style={{
@@ -1075,9 +1158,9 @@ function AboutSection() {
                 marginBottom: 16,
               }}
             >
-              India's Trusted Natural Stone
+              Quarry Owners. Manufacturers.
               <br />
-              Manufacturer &amp; Exporter
+              Direct Exporters.
             </h2>
             <div
               style={{
@@ -1096,11 +1179,11 @@ function AboutSection() {
                 fontSize: 14,
               }}
             >
-              Stone Heritage is a family-owned manufacturer and exporter of
-              premium Indian natural stones, established in 2012. Located in
-              Bijoliya, Rajasthan — the heartland of India's finest stone
-              quarries — we have spent over three decades perfecting the art of
-              stone extraction, processing, and international export.
+              Stone Heritage is a family-run natural stone business founded in
+              2012, based at Bijoliya, Bhilwara — right in the heart of
+              Rajasthan's stone belt. We are not agents or traders. We own our
+              quarries, run our own factory, and manage every export shipment
+              ourselves.
             </p>
             <p
               style={{
@@ -1110,17 +1193,18 @@ function AboutSection() {
                 fontSize: 14,
               }}
             >
-              Our product range includes Sandstone, Marble, Granite, Limestone,
-              Slate, and Quartzite in hundreds of colours and finishes. We
-              supply directly to landscape architects, builders, and importers
-              across the UK, Europe, Middle East, USA, and Australia.
+              From Rajgreen sandstone to granite, marble, and limestone — our
+              range covers hundreds of colours and finishes. We supply landscape
+              architects, stone importers, and construction firms across the UK,
+              Europe, the Middle East, USA, and Australia with factory-direct
+              pricing and bulk order capability.
             </p>
             <div className="grid grid-cols-2 gap-4 mb-8">
               {[
-                ["50+ Countries", "Exported To"],
-                ["1000+ Projects", "Completed"],
-                ["500+ Products", "In Range"],
-                ["15+ Years", "Experience"],
+                ["50+ Countries", "Export Markets"],
+                ["1000+ Projects", "Successfully Delivered"],
+                ["500+ Products", "In Our Range"],
+                ["15+ Years", "Since 2012"],
               ].map(([n, l]) => (
                 <div
                   key={l}
@@ -1156,7 +1240,7 @@ function AboutSection() {
               className="btn-cta"
               data-ocid="about.quote.button"
             >
-              Get Free Quote
+              Talk to Us on WhatsApp
             </a>
           </motion.div>
         </div>
@@ -1167,9 +1251,15 @@ function AboutSection() {
 
 function WhyChooseSection() {
   return (
-    <section style={{ background: "#fff", padding: "72px 0" }}>
+    <section
+      style={{ background: "#fff", padding: "72px 0" }}
+      className="stone-texture-white"
+    >
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
-        <SectionHeading tag="Our Strengths" title="Why Choose Stone Heritage" />
+        <SectionHeading
+          tag="The Stone Heritage Advantage"
+          title="Why We're Different"
+        />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {WHY_CHOOSE.map((item, i) => (
             <motion.div
@@ -1185,7 +1275,7 @@ function WhyChooseSection() {
                 borderBottom: "3px solid #c9a84c",
                 transition: "box-shadow 0.2s, transform 0.2s",
               }}
-              className="hover:shadow-stone hover:-translate-y-1"
+              className="stone-texture-cream hover:shadow-stone hover:-translate-y-1"
             >
               <item.icon
                 size={32}
@@ -1219,9 +1309,16 @@ function TrendingProducts({
   onZoom,
 }: { onZoom: (img: string, name: string) => void }) {
   return (
-    <section id="products" style={{ background: "#f7f4ef", padding: "72px 0" }}>
+    <section
+      id="products"
+      className="stone-texture-cream"
+      style={{ background: "#f7f4ef", padding: "72px 0" }}
+    >
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
-        <SectionHeading tag="Best Sellers" title="Trending Products" />
+        <SectionHeading
+          tag="Quarry-to-Market Picks"
+          title="Our Most Exported Stones"
+        />
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {STONES.map((s, i) => (
             <motion.div
@@ -1365,7 +1462,7 @@ function BrowseRange() {
               marginBottom: 6,
             }}
           >
-            Our Range
+            Explore by Stone Type
           </div>
           <h2
             style={{
@@ -1377,7 +1474,7 @@ function BrowseRange() {
               textTransform: "uppercase",
             }}
           >
-            Browse Our Stone Range
+            Find Your Stone
           </h2>
           <div
             style={{
@@ -1465,16 +1562,23 @@ function AllProductsSection({
     if (activeFilter === "All") return true;
     if (activeFilter === "Blocks")
       return p.name.toLowerCase().includes("block");
-    return p.name.toLowerCase().includes(activeFilter.toLowerCase());
+    return (
+      p.name.toLowerCase().includes(activeFilter.toLowerCase()) ||
+      (p as { cat?: string }).cat?.toLowerCase() === activeFilter.toLowerCase()
+    );
   });
 
   return (
     <section
       id="all-products"
+      className="stone-texture-white"
       style={{ background: "#fff", padding: "72px 0" }}
     >
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
-        <SectionHeading tag="Full Catalogue" title="All Products" />
+        <SectionHeading
+          tag="Full Stone Catalogue"
+          title="Our Stone Collection"
+        />
         <div
           style={{
             display: "flex",
@@ -1562,41 +1666,48 @@ function AllProductsSection({
                   <ZoomIn size={14} color="#fff" />
                 </button>
               </div>
-              {(p as any).images && (p as any).images.length > 1 && (
-                <div style={{ display: "flex", gap: 3, padding: "4px 4px 0" }}>
-                  {(p as any).images.map((thumb: string, ti: number) => (
-                    <button
-                      key={thumb}
-                      type="button"
-                      onClick={() =>
-                        onZoom(thumb, `${p.name} - Photo ${ti + 1}`)
-                      }
-                      style={{
-                        flex: 1,
-                        height: 44,
-                        border:
-                          ti === 0 ? "2px solid #c8a96e" : "1px solid #e5e7eb",
-                        borderRadius: 2,
-                        overflow: "hidden",
-                        cursor: "pointer",
-                        background: "none",
-                        padding: 0,
-                      }}
-                      aria-label={`View photo ${ti + 1}`}
-                    >
-                      <img
-                        src={thumb}
-                        alt={`${p.name} ${ti + 1}`}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                        }}
-                      />
-                    </button>
-                  ))}
-                </div>
-              )}
+              {(p as { images?: string[] }).images &&
+                (p as { images?: string[] }).images!.length > 1 && (
+                  <div
+                    style={{ display: "flex", gap: 3, padding: "4px 4px 0" }}
+                  >
+                    {(p as { images?: string[] }).images!.map(
+                      (thumb: string, ti: number) => (
+                        <button
+                          key={thumb}
+                          type="button"
+                          onClick={() =>
+                            onZoom(thumb, `${p.name} - Photo ${ti + 1}`)
+                          }
+                          style={{
+                            flex: 1,
+                            height: 44,
+                            border:
+                              ti === 0
+                                ? "2px solid #c8a96e"
+                                : "1px solid #e5e7eb",
+                            borderRadius: 2,
+                            overflow: "hidden",
+                            cursor: "pointer",
+                            background: "none",
+                            padding: 0,
+                          }}
+                          aria-label={`View photo ${ti + 1}`}
+                        >
+                          <img
+                            src={thumb}
+                            alt={`${p.name} ${ti + 1}`}
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "cover",
+                            }}
+                          />
+                        </button>
+                      ),
+                    )}
+                  </div>
+                )}
               <div style={{ padding: "14px 16px 16px" }}>
                 <h3
                   style={{
@@ -1678,19 +1789,19 @@ function MiningSection({
   const mineImages = [
     {
       img: "/assets/generated/mine-quarry.dim_1600x700.jpg",
-      label: "Open Pit Quarry",
+      label: "Live Quarry Face",
     },
     {
       img: "/assets/uploads/bl11-019d244f-f8c1-742d-b7f7-fca4715bfb21-1.jpeg",
-      label: "Export Blocks",
+      label: "Blocks Ready for Export",
     },
     {
       img: "/assets/generated/mine-blocks.dim_1600x700.jpg",
-      label: "Stone Blocks",
+      label: "Graded Stone Blocks",
     },
     {
       img: "/assets/generated/stone-factory.dim_1600x700.jpg",
-      label: "Processing Unit",
+      label: "In-House Processing",
     },
   ];
   return (
@@ -1707,7 +1818,7 @@ function MiningSection({
               marginBottom: 6,
             }}
           >
-            Source Verified
+            Straight from the Earth
           </div>
           <h2
             style={{
@@ -1719,7 +1830,7 @@ function MiningSection({
               textTransform: "uppercase",
             }}
           >
-            Our Mines &amp; Factory
+            From Our Own Quarries
           </h2>
           <div
             style={{
@@ -1738,9 +1849,9 @@ function MiningSection({
               margin: "12px auto 0",
             }}
           >
-            We own and operate quarries in Rajasthan, ensuring direct supply of
-            premium natural stone with full quality control from extraction to
-            export.
+            Every stone you see on this site starts its journey in our Bijoliya
+            quarries in Rajasthan. We control extraction, sizing, finishing, and
+            loading — no outside sourcing, no compromised quality.
           </p>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -1814,9 +1925,15 @@ function MiningSection({
 
 function CertificationsSection() {
   return (
-    <section style={{ background: "#f7f4ef", padding: "60px 0" }}>
+    <section
+      className="stone-texture-cream"
+      style={{ background: "#f7f4ef", padding: "60px 0" }}
+    >
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
-        <SectionHeading tag="Trust & Quality" title="Awards & Certifications" />
+        <SectionHeading
+          tag="Verified & Accredited"
+          title="Our Certifications"
+        />
         <div
           style={{
             display: "flex",
@@ -1876,9 +1993,16 @@ function ProjectsSection({
   onZoom,
 }: { onZoom: (img: string, name: string) => void }) {
   return (
-    <section id="projects" style={{ background: "#fff", padding: "72px 0" }}>
+    <section
+      id="projects"
+      className="stone-texture-white"
+      style={{ background: "#fff", padding: "72px 0" }}
+    >
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
-        <SectionHeading tag="Our Work" title="Featured Projects" />
+        <SectionHeading
+          tag="Projects We're Proud Of"
+          title="Delivered Worldwide"
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {PROJECTS.map((p, i) => (
             <motion.div
@@ -2013,9 +2137,15 @@ function ProjectsSection({
 
 function TestimonialsSection() {
   return (
-    <section style={{ background: "#f7f4ef", padding: "72px 0" }}>
+    <section
+      className="stone-texture-cream"
+      style={{ background: "#f7f4ef", padding: "72px 0" }}
+    >
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
-        <SectionHeading tag="Client Feedback" title="What Our Clients Say" />
+        <SectionHeading
+          tag="Words from Our Clients"
+          title="What Buyers Say About Us"
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t, i) => (
             <motion.div
@@ -2138,9 +2268,13 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" style={{ background: "#fff", padding: "72px 0" }}>
+    <section
+      id="contact"
+      className="stone-texture-white"
+      style={{ background: "#fff", padding: "72px 0" }}
+    >
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 16px" }}>
-        <SectionHeading tag="Get In Touch" title="Contact Us" />
+        <SectionHeading tag="Get in Touch" title="Send Us Your Requirement" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -2159,7 +2293,7 @@ function ContactSection() {
                 letterSpacing: "0.05em",
               }}
             >
-              Send an Enquiry
+              Tell Us What You Need
             </h3>
             <form
               onSubmit={handleSubmit}
@@ -2268,7 +2402,7 @@ function ContactSection() {
                 letterSpacing: "0.05em",
               }}
             >
-              India Office
+              Our India Office
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {[
@@ -2433,8 +2567,9 @@ function Footer() {
               </div>
             </div>
             <p style={{ fontSize: 12, color: "#9ca3af", lineHeight: 1.7 }}>
-              Premium Indian natural stone manufacturer and exporter since 2012.
-              Direct from quarry to your doorstep, worldwide.
+              Quarry owners, manufacturers, and direct exporters of Indian
+              natural stone since 2012. From our mines in Rajasthan to your
+              project site — anywhere in the world.
             </p>
             <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
               <a
